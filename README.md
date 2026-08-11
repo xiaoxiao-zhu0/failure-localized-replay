@@ -15,7 +15,7 @@ standard public sources.
 The GitHub repository URL and the permanent Zenodo DOI must be inserted here
 after the public release is created:
 
-- GitHub: `https://github.com/REPLACE_WITH_OWNER/REPLACE_WITH_REPOSITORY`
+- GitHub: `https://github.com/xiaoxiao-zhu0/failure-localized-replay`
 - Zenodo: `https://doi.org/10.5281/zenodo/REPLACE_WITH_RECORD_ID`
 
 Do not submit the manuscript until both identifiers resolve publicly.
