@@ -1,0 +1,108 @@
+{
+  "stage": "D127 dedicated serial runtime/profile evidence",
+  "seeds": [
+    255,
+    256,
+    257
+  ],
+  "execution": {
+    "server": "server2",
+    "single_gpu": true,
+    "gpu_index": 1,
+    "single_worker": true,
+    "serial": true,
+    "latin_method_order": true,
+    "full_metrics_disabled": true,
+    "memory_trace_signature_disabled": true
+  },
+  "per_method": {
+    "persistent_srrd_selective_swap_1": {
+      "paired_stream_wall_seconds": {
+        "n": 3,
+        "mean": 2054.0,
+        "sample_std": 275.7952138816045
+      },
+      "reported_elapsed_seconds": {
+        "n": 3,
+        "mean": 1991.0305738179788,
+        "sample_std": 274.3049580418763
+      },
+      "peak_cuda_memory_bytes": {
+        "n": 3,
+        "mean": 615808512.0,
+        "sample_std": 0.0
+      },
+      "per_seed_paired_stream_wall_seconds": {
+        "255": 2165.0,
+        "256": 1740.0,
+        "257": 2257.0
+      }
+    },
+    "persistent_srrd_obc_1": {
+      "paired_stream_wall_seconds": {
+        "n": 3,
+        "mean": 2223.3333333333335,
+        "sample_std": 309.4872102903985
+      },
+      "reported_elapsed_seconds": {
+        "n": 3,
+        "mean": 2166.14073999327,
+        "sample_std": 296.2571849854326
+      },
+      "peak_cuda_memory_bytes": {
+        "n": 3,
+        "mean": 615873024.0,
+        "sample_std": 0.0
+      },
+      "per_seed_paired_stream_wall_seconds": {
+        "255": 2425.0,
+        "256": 1867.0,
+        "257": 2378.0
+      }
+    },
+    "persistent_srrd_prequential_arbitration_1": {
+      "paired_stream_wall_seconds": {
+        "n": 3,
+        "mean": 2805.0,
+        "sample_std": 504.0267850025433
+      },
+      "reported_elapsed_seconds": {
+        "n": 3,
+        "mean": 2745.186969677297,
+        "sample_std": 492.10646315220623
+      },
+      "peak_cuda_memory_bytes": {
+        "n": 3,
+        "mean": 615873024.0,
+        "sample_std": 0.0
+      },
+      "per_seed_paired_stream_wall_seconds": {
+        "255": 3096.0,
+        "256": 2223.0,
+        "257": 3096.0
+      }
+    }
+  },
+  "comparisons": {
+    "persistent_srrd_obc_1_vs_layer2": {
+      "runtime_relative_change": {
+        "n": 3,
+        "mean": 0.08223062417907696,
+        "sample_std": 0.03419073548060969
+      }
+    },
+    "persistent_srrd_prequential_arbitration_1_vs_layer2": {
+      "runtime_relative_change": {
+        "n": 3,
+        "mean": 0.3597805632368681,
+        "sample_std": 0.07691804585748956
+      }
+    }
+  },
+  "audit": {
+    "manifest_rows": 18,
+    "failed_rows": 0,
+    "gpu1_contaminated_rows": 0,
+    "runtime_authoritative": true
+  }
+}

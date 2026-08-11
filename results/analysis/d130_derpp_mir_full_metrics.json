@@ -1,0 +1,538 @@
+{
+  "stage": "D130 CIFAR-100 DER++/MIR full-metrics completion",
+  "status": "completed_not_used_for_hyperparameter_tuning",
+  "seeds": [
+    218,
+    219,
+    220,
+    221,
+    222
+  ],
+  "methods": {
+    "derpp": {
+      "per_seed": [
+        {
+          "seed": 218,
+          "streams": {
+            "hard": {
+              "acquisition": 0.6693,
+              "peak": 0.6693,
+              "final": 0.0841,
+              "forgetting": 0.5851999999999999,
+              "bwt": -0.5851999999999999
+            },
+            "blurry": {
+              "acquisition": 0.6244,
+              "peak": 0.6244,
+              "final": 0.1362,
+              "forgetting": 0.48819999999999997,
+              "bwt": -0.48819999999999997
+            }
+          },
+          "checks": {
+            "hard": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            },
+            "blurry": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            }
+          },
+          "mean": {
+            "acquisition": 0.6468499999999999,
+            "peak": 0.6468499999999999,
+            "final": 0.11015,
+            "forgetting": 0.5367,
+            "bwt": -0.5367
+          },
+          "pss": 0.14909999999999995
+        },
+        {
+          "seed": 219,
+          "streams": {
+            "hard": {
+              "acquisition": 0.6955,
+              "peak": 0.6955,
+              "final": 0.0931,
+              "forgetting": 0.6024,
+              "bwt": -0.6024
+            },
+            "blurry": {
+              "acquisition": 0.6462,
+              "peak": 0.6462,
+              "final": 0.1446,
+              "forgetting": 0.5016,
+              "bwt": -0.5016
+            }
+          },
+          "checks": {
+            "hard": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            },
+            "blurry": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            }
+          },
+          "mean": {
+            "acquisition": 0.67085,
+            "peak": 0.67085,
+            "final": 0.11885000000000001,
+            "forgetting": 0.552,
+            "bwt": -0.552
+          },
+          "pss": 0.1523
+        },
+        {
+          "seed": 220,
+          "streams": {
+            "hard": {
+              "acquisition": 0.6802,
+              "peak": 0.6802,
+              "final": 0.0937,
+              "forgetting": 0.5865,
+              "bwt": -0.5865
+            },
+            "blurry": {
+              "acquisition": 0.6415,
+              "peak": 0.6415,
+              "final": 0.146,
+              "forgetting": 0.4955,
+              "bwt": -0.4955
+            }
+          },
+          "checks": {
+            "hard": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            },
+            "blurry": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            }
+          },
+          "mean": {
+            "acquisition": 0.6608499999999999,
+            "peak": 0.6608499999999999,
+            "final": 0.11985,
+            "forgetting": 0.541,
+            "bwt": -0.541
+          },
+          "pss": 0.1433
+        },
+        {
+          "seed": 221,
+          "streams": {
+            "hard": {
+              "acquisition": 0.6827,
+              "peak": 0.6827,
+              "final": 0.1041,
+              "forgetting": 0.5786,
+              "bwt": -0.5786
+            },
+            "blurry": {
+              "acquisition": 0.6548,
+              "peak": 0.6548,
+              "final": 0.15860000000000002,
+              "forgetting": 0.4962,
+              "bwt": -0.4962
+            }
+          },
+          "checks": {
+            "hard": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            },
+            "blurry": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            }
+          },
+          "mean": {
+            "acquisition": 0.66875,
+            "peak": 0.66875,
+            "final": 0.13135000000000002,
+            "forgetting": 0.5374,
+            "bwt": -0.5374
+          },
+          "pss": 0.13690000000000005
+        },
+        {
+          "seed": 222,
+          "streams": {
+            "hard": {
+              "acquisition": 0.6605,
+              "peak": 0.6605,
+              "final": 0.1091,
+              "forgetting": 0.5514,
+              "bwt": -0.5514
+            },
+            "blurry": {
+              "acquisition": 0.6093,
+              "peak": 0.6115,
+              "final": 0.1459,
+              "forgetting": 0.4656,
+              "bwt": -0.4634
+            }
+          },
+          "checks": {
+            "hard": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            },
+            "blurry": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            }
+          },
+          "mean": {
+            "acquisition": 0.6349,
+            "peak": 0.636,
+            "final": 0.1275,
+            "forgetting": 0.5085,
+            "bwt": -0.5074
+          },
+          "pss": 0.12259999999999999
+        }
+      ],
+      "aggregate": {
+        "acquisition": {
+          "n": 5,
+          "mean": 0.6564399999999999,
+          "sample_std": 0.015285385176697358,
+          "ci95_low": 0.6374637301918,
+          "ci95_high": 0.6754162698081998,
+          "positive_seed_count": 5
+        },
+        "peak": {
+          "n": 5,
+          "mean": 0.6566599999999999,
+          "sample_std": 0.014900939567691679,
+          "ci95_low": 0.6381610059371434,
+          "ci95_high": 0.6751589940628564,
+          "positive_seed_count": 5
+        },
+        "final": {
+          "n": 5,
+          "mean": 0.12154000000000001,
+          "sample_std": 0.00823987257183023,
+          "ci95_low": 0.11131048708287633,
+          "ci95_high": 0.1317695129171237,
+          "positive_seed_count": 5
+        },
+        "forgetting": {
+          "n": 5,
+          "mean": 0.53512,
+          "sample_std": 0.016092140938980155,
+          "ci95_low": 0.5151421711968893,
+          "ci95_high": 0.5550978288031108,
+          "positive_seed_count": 5
+        },
+        "bwt": {
+          "n": 5,
+          "mean": -0.5349,
+          "sample_std": 0.016548111674750114,
+          "ci95_low": -0.5554439004857403,
+          "ci95_high": -0.5143560995142598,
+          "positive_seed_count": 0
+        }
+      },
+      "pss": {
+        "n": 5,
+        "mean": 0.14084,
+        "sample_std": 0.01176681775162681,
+        "ci95_low": 0.12623190829294942,
+        "ci95_high": 0.15544809170705057,
+        "positive_seed_count": 5
+      }
+    },
+    "mir": {
+      "per_seed": [
+        {
+          "seed": 218,
+          "streams": {
+            "hard": {
+              "acquisition": 0.5602,
+              "peak": 0.5602,
+              "final": 0.0631,
+              "forgetting": 0.4971,
+              "bwt": -0.4971
+            },
+            "blurry": {
+              "acquisition": 0.5921,
+              "peak": 0.5921,
+              "final": 0.1157,
+              "forgetting": 0.4764,
+              "bwt": -0.4764
+            }
+          },
+          "checks": {
+            "hard": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            },
+            "blurry": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            }
+          },
+          "mean": {
+            "acquisition": 0.5761499999999999,
+            "peak": 0.5761499999999999,
+            "final": 0.08940000000000001,
+            "forgetting": 0.48675,
+            "bwt": -0.48675
+          },
+          "pss": 0.07329999999999999
+        },
+        {
+          "seed": 219,
+          "streams": {
+            "hard": {
+              "acquisition": 0.5883,
+              "peak": 0.5883,
+              "final": 0.0745,
+              "forgetting": 0.5138,
+              "bwt": -0.5138
+            },
+            "blurry": {
+              "acquisition": 0.5809,
+              "peak": 0.5926,
+              "final": 0.1099,
+              "forgetting": 0.4827,
+              "bwt": -0.471
+            }
+          },
+          "checks": {
+            "hard": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            },
+            "blurry": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            }
+          },
+          "mean": {
+            "acquisition": 0.5846,
+            "peak": 0.59045,
+            "final": 0.0922,
+            "forgetting": 0.49825,
+            "bwt": -0.4924
+          },
+          "pss": 0.06650000000000002
+        },
+        {
+          "seed": 220,
+          "streams": {
+            "hard": {
+              "acquisition": 0.5806,
+              "peak": 0.5806,
+              "final": 0.0804,
+              "forgetting": 0.5002,
+              "bwt": -0.5002
+            },
+            "blurry": {
+              "acquisition": 0.6016,
+              "peak": 0.6016,
+              "final": 0.1309,
+              "forgetting": 0.4707,
+              "bwt": -0.4707
+            }
+          },
+          "checks": {
+            "hard": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            },
+            "blurry": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            }
+          },
+          "mean": {
+            "acquisition": 0.5911,
+            "peak": 0.5911,
+            "final": 0.10565,
+            "forgetting": 0.48545,
+            "bwt": -0.48545
+          },
+          "pss": 0.07999999999999996
+        },
+        {
+          "seed": 221,
+          "streams": {
+            "hard": {
+              "acquisition": 0.5448999999999999,
+              "peak": 0.5448999999999999,
+              "final": 0.0871,
+              "forgetting": 0.4578,
+              "bwt": -0.4578
+            },
+            "blurry": {
+              "acquisition": 0.6009,
+              "peak": 0.6009,
+              "final": 0.13219999999999998,
+              "forgetting": 0.4687,
+              "bwt": -0.4687
+            }
+          },
+          "checks": {
+            "hard": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            },
+            "blurry": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            }
+          },
+          "mean": {
+            "acquisition": 0.5729,
+            "peak": 0.5729,
+            "final": 0.10965,
+            "forgetting": 0.46325,
+            "bwt": -0.46325
+          },
+          "pss": 0.05600000000000001
+        },
+        {
+          "seed": 222,
+          "streams": {
+            "hard": {
+              "acquisition": 0.5563,
+              "peak": 0.5563,
+              "final": 0.07869999999999999,
+              "forgetting": 0.4776,
+              "bwt": -0.4776
+            },
+            "blurry": {
+              "acquisition": 0.5833,
+              "peak": 0.5833,
+              "final": 0.1282,
+              "forgetting": 0.4551,
+              "bwt": -0.4551
+            }
+          },
+          "checks": {
+            "hard": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            },
+            "blurry": {
+              "ten_experience_results": true,
+              "experience_forgetting_present": true,
+              "experience_bwt_present": true,
+              "run_metadata_present": true
+            }
+          },
+          "mean": {
+            "acquisition": 0.5698000000000001,
+            "peak": 0.5698000000000001,
+            "final": 0.10345,
+            "forgetting": 0.46635000000000004,
+            "bwt": -0.46635000000000004
+          },
+          "pss": 0.07200000000000004
+        }
+      ],
+      "aggregate": {
+        "acquisition": {
+          "n": 5,
+          "mean": 0.57891,
+          "sample_std": 0.008770718328620499,
+          "ci95_low": 0.5680214606866854,
+          "ci95_high": 0.5897985393133147,
+          "positive_seed_count": 5
+        },
+        "peak": {
+          "n": 5,
+          "mean": 0.58008,
+          "sample_std": 0.010020641197049205,
+          "ci95_low": 0.5676397252664421,
+          "ci95_high": 0.592520274733558,
+          "positive_seed_count": 5
+        },
+        "final": {
+          "n": 5,
+          "mean": 0.10007,
+          "sample_std": 0.00880515474026436,
+          "ci95_low": 0.08913870908893191,
+          "ci95_high": 0.1110012909110681,
+          "positive_seed_count": 5
+        },
+        "forgetting": {
+          "n": 5,
+          "mean": 0.48001,
+          "sample_std": 0.014791991076254745,
+          "ci95_low": 0.46164626166964906,
+          "ci95_high": 0.4983737383303509,
+          "positive_seed_count": 5
+        },
+        "bwt": {
+          "n": 5,
+          "mean": -0.47884,
+          "sample_std": 0.0131261380458991,
+          "ci95_low": -0.49513564019612605,
+          "ci95_high": -0.46254435980387393,
+          "positive_seed_count": 0
+        }
+      },
+      "pss": {
+        "n": 5,
+        "mean": 0.06956,
+        "sample_std": 0.008974575198860375,
+        "ci95_low": 0.05841837952927853,
+        "ci95_high": 0.08070162047072146,
+        "positive_seed_count": 5
+      }
+    }
+  },
+  "full_metrics_gate_passes": true,
+  "execution_boundary": {
+    "server": "teacher-server2",
+    "physical_gpu": 1,
+    "workers": 2,
+    "runtime_authoritative": false
+  }
+}

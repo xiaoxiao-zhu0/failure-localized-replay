@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="600" viewBox="0 0 1280 600">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#222} .title{font-size:20px;font-weight:600}.panel{font-size:16px;font-weight:600}.axis{font-size:13px}.label{font-size:13px;font-weight:600}.value{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#777;stroke-width:1.2}.zero{stroke:#555;stroke-width:1.2}</style>
+<text x="640" y="32" text-anchor="middle" class="title">Layer-2 × PRBA interaction on CIFAR-100 (5 paired seeds)</text>
+<text x="82" y="56" class="panel">A. Four-cell accuracy-retention working points</text>
+<rect x="82" y="70" width="610" height="430" class="frame"/>
+<line x1="82.0" y1="70" x2="82.0" y2="500" class="grid"/>
+<text x="82.0" y="523" text-anchor="middle" class="axis">15.5</text>
+<line x1="204.0" y1="70" x2="204.0" y2="500" class="grid"/>
+<text x="204.0" y="523" text-anchor="middle" class="axis">16.5</text>
+<line x1="326.0" y1="70" x2="326.0" y2="500" class="grid"/>
+<text x="326.0" y="523" text-anchor="middle" class="axis">17.6</text>
+<line x1="448.0" y1="70" x2="448.0" y2="500" class="grid"/>
+<text x="448.0" y="523" text-anchor="middle" class="axis">18.7</text>
+<line x1="570.0" y1="70" x2="570.0" y2="500" class="grid"/>
+<text x="570.0" y="523" text-anchor="middle" class="axis">19.7</text>
+<line x1="692.0" y1="70" x2="692.0" y2="500" class="grid"/>
+<text x="692.0" y="523" text-anchor="middle" class="axis">20.8</text>
+<line x1="82" y1="500.0" x2="692" y2="500.0" class="grid"/>
+<text x="70" y="504.0" text-anchor="end" class="axis">29.7</text>
+<line x1="82" y1="414.0" x2="692" y2="414.0" class="grid"/>
+<text x="70" y="418.0" text-anchor="end" class="axis">31.8</text>
+<line x1="82" y1="328.0" x2="692" y2="328.0" class="grid"/>
+<text x="70" y="332.0" text-anchor="end" class="axis">33.9</text>
+<line x1="82" y1="242.0" x2="692" y2="242.0" class="grid"/>
+<text x="70" y="246.0" text-anchor="end" class="axis">35.9</text>
+<line x1="82" y1="156.0" x2="692" y2="156.0" class="grid"/>
+<text x="70" y="160.0" text-anchor="end" class="axis">38.0</text>
+<line x1="82" y1="70.0" x2="692" y2="70.0" class="grid"/>
+<text x="70" y="74.0" text-anchor="end" class="axis">40.1</text>
+<text x="387.0" y="552" text-anchor="middle" class="axis">Mean final accuracy (%) — higher is better</text>
+<text transform="translate(24 285.0) rotate(-90)" text-anchor="middle" class="axis">Mean forgetting (%) — lower is better</text>
+<line x1="278.7" y1="214.8" x2="431.9" y2="214.8" stroke="#4C78A8" stroke-width="2"/>
+<line x1="344.0" y1="183.9" x2="344.0" y2="246.8" stroke="#4C78A8" stroke-width="2"/>
+<circle cx="344.0" cy="214.8" r="7" fill="#4C78A8" stroke="#222" stroke-width="1"/>
+<text x="354.0" y="202.8" class="label">CE-ACE</text>
+<line x1="465.5" y1="141.6" x2="622.7" y2="141.6" stroke="#F58518" stroke-width="2"/>
+<line x1="544.1" y1="103.3" x2="544.1" y2="174.8" stroke="#F58518" stroke-width="2"/>
+<circle cx="544.1" cy="141.6" r="7" fill="#F58518" stroke="#222" stroke-width="1"/>
+<text x="422.1" y="129.6" class="label">Layer 2 only</text>
+<line x1="151.3" y1="431.7" x2="264.2" y2="431.7" stroke="#54A24B" stroke-width="2"/>
+<line x1="210.7" y1="400.2" x2="210.7" y2="466.7" stroke="#54A24B" stroke-width="2"/>
+<circle cx="210.7" cy="431.7" r="7" fill="#54A24B" stroke="#222" stroke-width="1"/>
+<text x="220.7" y="451.7" class="label">Layer 3 only</text>
+<line x1="404.2" y1="275.5" x2="590.2" y2="275.5" stroke="#B279A2" stroke-width="2"/>
+<line x1="497.2" y1="235.6" x2="497.2" y2="315.4" stroke="#B279A2" stroke-width="2"/>
+<circle cx="497.2" cy="275.5" r="7" fill="#B279A2" stroke="#222" stroke-width="1"/>
+<text x="507.2" y="295.5" class="label">Full three-layer</text>
+<text x="760" y="56" class="panel">B. Layer-3 effect with and without Layer 2</text>
+<rect x="760" y="70" width="450" height="430" class="frame"/>
+<line x1="760" y1="383.4" x2="1210" y2="383.4" class="zero"/>
+<text x="748" y="504.0" text-anchor="end" class="axis">-2.3</text>
+<text x="748" y="418.0" text-anchor="end" class="axis">-0.6</text>
+<text x="748" y="332.0" text-anchor="end" class="axis">1.1</text>
+<text x="748" y="246.0" text-anchor="end" class="axis">2.8</text>
+<text x="748" y="160.0" text-anchor="end" class="axis">4.5</text>
+<text x="748" y="74.0" text-anchor="end" class="axis">6.2</text>
+<rect x="819.0" y="383.4" width="62" height="58.2" fill="#4C78A8" opacity="0.88"/>
+<line x1="850.0" y1="426.6" x2="850.0" y2="459.6" stroke="#222" stroke-width="1.5"/>
+<line x1="843.0" y1="426.6" x2="857.0" y2="426.6" stroke="#222" stroke-width="1.5"/>
+<line x1="843.0" y1="459.6" x2="857.0" y2="459.6" stroke="#222" stroke-width="1.5"/>
+<text x="850.0" y="459.6" text-anchor="middle" class="value">-1.15</text>
+<rect x="891.0" y="120.6" width="62" height="262.9" fill="#E45756" opacity="0.88"/>
+<line x1="922.0" y1="110.4" x2="922.0" y2="132.7" stroke="#222" stroke-width="1.5"/>
+<line x1="915.0" y1="110.4" x2="929.0" y2="110.4" stroke="#222" stroke-width="1.5"/>
+<line x1="915.0" y1="132.7" x2="929.0" y2="132.7" stroke="#222" stroke-width="1.5"/>
+<text x="922.0" y="111.6" text-anchor="middle" class="value">+5.21</text>
+<text x="886.0" y="528" text-anchor="middle" class="axis">Without Layer 2</text>
+<rect x="1017.0" y="383.4" width="62" height="20.5" fill="#4C78A8" opacity="0.88"/>
+<line x1="1048.0" y1="395.7" x2="1048.0" y2="411.7" stroke="#222" stroke-width="1.5"/>
+<line x1="1041.0" y1="395.7" x2="1055.0" y2="395.7" stroke="#222" stroke-width="1.5"/>
+<line x1="1041.0" y1="411.7" x2="1055.0" y2="411.7" stroke="#222" stroke-width="1.5"/>
+<text x="1048.0" y="421.9" text-anchor="middle" class="value">-0.41</text>
+<rect x="1089.0" y="221.2" width="62" height="162.3" fill="#E45756" opacity="0.88"/>
+<line x1="1120.0" y1="203.9" x2="1120.0" y2="245.4" stroke="#222" stroke-width="1.5"/>
+<line x1="1113.0" y1="203.9" x2="1127.0" y2="203.9" stroke="#222" stroke-width="1.5"/>
+<line x1="1113.0" y1="245.4" x2="1127.0" y2="245.4" stroke="#222" stroke-width="1.5"/>
+<text x="1120.0" y="212.2" text-anchor="middle" class="value">+3.22</text>
+<text x="1084.0" y="528" text-anchor="middle" class="axis">With Layer 2</text>
+<text transform="translate(705 285.0) rotate(-90)" text-anchor="middle" class="axis">Effect (percentage points)</text>
+<rect x="815" y="550" width="14" height="14" fill="#4C78A8"/><text x="836" y="562" class="axis">Accuracy delta</text>
+<rect x="995" y="550" width="14" height="14" fill="#E45756"/><text x="1016" y="562" class="axis">Forgetting improvement</text>
+<text x="985.0" y="590" text-anchor="middle" class="axis">Penalty mitigation: +0.75 pp; retention preserved: 62.0%</text>
+</svg>

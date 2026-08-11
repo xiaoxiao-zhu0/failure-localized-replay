@@ -1,0 +1,375 @@
+{
+  "stage": "D133 exact paired statistics",
+  "source": "output\\pattern_recognition_github_repo_20260812\\results\\analysis\\d133_layer2_prba_interaction.json",
+  "small_sample_warning": "With five pairs, the minimum attainable two-sided exact sign-flip p-value for a fully consistent nonzero direction is 0.0625. Directional p-values are reported only for preregistered signs.",
+  "cell_statistics": {
+    "base": {
+      "accuracy": {
+        "n": 5,
+        "mean": 0.17759,
+        "sample_std": 0.008556605635414091,
+        "bootstrap_95_ci_low": 0.17194,
+        "bootstrap_95_ci_high": 0.18520000000000003,
+        "values": [
+          0.19180000000000003,
+          0.16915,
+          0.1738,
+          0.1753,
+          0.1779
+        ]
+      },
+      "forgetting": {
+        "n": 5,
+        "mean": 0.36596,
+        "sample_std": 0.009688356413757706,
+        "bootstrap_95_ci_low": 0.35827999999999993,
+        "bootstrap_95_ci_high": 0.37337999999999993,
+        "values": [
+          0.3752,
+          0.3687,
+          0.3739,
+          0.35275,
+          0.35924999999999996
+        ]
+      },
+      "pss": {
+        "n": 5,
+        "mean": 0.08053999999999999,
+        "sample_std": 0.02211770783783887,
+        "bootstrap_95_ci_low": 0.06220000000000002,
+        "bootstrap_95_ci_high": 0.09699999999999998,
+        "values": [
+          0.09819999999999998,
+          0.04850000000000004,
+          0.08879999999999996,
+          0.06729999999999997,
+          0.09989999999999999
+        ]
+      }
+    },
+    "layer2_only": {
+      "accuracy": {
+        "n": 5,
+        "mean": 0.19491,
+        "sample_std": 0.00865392974318604,
+        "bootstrap_95_ci_low": 0.18811,
+        "bootstrap_95_ci_high": 0.20171,
+        "values": [
+          0.19755,
+          0.20190000000000002,
+          0.18530000000000002,
+          0.1862,
+          0.2036
+        ]
+      },
+      "forgetting": {
+        "n": 5,
+        "mean": 0.38354,
+        "sample_std": 0.0108425319921133,
+        "bootstrap_95_ci_low": 0.37557,
+        "bootstrap_95_ci_high": 0.39274000000000003,
+        "values": [
+          0.38325,
+          0.37829999999999997,
+          0.39985000000000004,
+          0.38585,
+          0.37045
+        ]
+      },
+      "pss": {
+        "n": 5,
+        "mean": 0.06885999999999999,
+        "sample_std": 0.012788002189552498,
+        "bootstrap_95_ci_low": 0.06098000000000001,
+        "bootstrap_95_ci_high": 0.08021999999999997,
+        "values": [
+          0.05980000000000002,
+          0.09079999999999996,
+          0.060500000000000026,
+          0.06429999999999997,
+          0.06889999999999996
+        ]
+      }
+    },
+    "layer3_only": {
+      "accuracy": {
+        "n": 5,
+        "mean": 0.16606,
+        "sample_std": 0.006204272721278452,
+        "bootstrap_95_ci_low": 0.16092,
+        "bootstrap_95_ci_high": 0.17069,
+        "values": [
+          0.17325000000000002,
+          0.15760000000000002,
+          0.16215000000000002,
+          0.16765,
+          0.16965
+        ]
+      },
+      "forgetting": {
+        "n": 5,
+        "mean": 0.31386000000000003,
+        "sample_std": 0.010238249362073574,
+        "bootstrap_95_ci_low": 0.30545,
+        "bootstrap_95_ci_high": 0.32142,
+        "values": [
+          0.32030000000000003,
+          0.315,
+          0.32575,
+          0.29935,
+          0.3089
+        ]
+      },
+      "pss": {
+        "n": 5,
+        "mean": 0.0678,
+        "sample_std": 0.012730475246431271,
+        "bootstrap_95_ci_low": 0.05896000000000001,
+        "bootstrap_95_ci_high": 0.07883999999999998,
+        "values": [
+          0.08789999999999995,
+          0.05760000000000001,
+          0.0728,
+          0.06180000000000002,
+          0.05890000000000001
+        ]
+      }
+    },
+    "full_three_layer": {
+      "accuracy": {
+        "n": 5,
+        "mean": 0.19085,
+        "sample_std": 0.010202511945594578,
+        "bootstrap_95_ci_low": 0.18280000000000002,
+        "bootstrap_95_ci_high": 0.19889999999999997,
+        "values": [
+          0.1918,
+          0.1989,
+          0.17915,
+          0.18195,
+          0.20245000000000002
+        ]
+      },
+      "forgetting": {
+        "n": 5,
+        "mean": 0.35137999999999997,
+        "sample_std": 0.012293982267760097,
+        "bootstrap_95_ci_low": 0.34179,
+        "bootstrap_95_ci_high": 0.36096999999999996,
+        "values": [
+          0.36005,
+          0.34135000000000004,
+          0.36619999999999997,
+          0.35235,
+          0.33694999999999997
+        ]
+      },
+      "pss": {
+        "n": 5,
+        "mean": 0.0635,
+        "sample_std": 0.014217770570662624,
+        "bootstrap_95_ci_low": 0.052059999999999995,
+        "bootstrap_95_ci_high": 0.0743,
+        "values": [
+          0.06709999999999999,
+          0.07490000000000002,
+          0.07729999999999998,
+          0.04359999999999997,
+          0.05460000000000001
+        ]
+      }
+    }
+  },
+  "paired_effects": {
+    "full_vs_base_accuracy": {
+      "n": 5,
+      "mean": 0.013259999999999994,
+      "sample_std": 0.01305250933728838,
+      "bootstrap_95_ci_low": 0.0034699999999999844,
+      "bootstrap_95_ci_high": 0.02383,
+      "exact_sign_flip_p_two_sided": 0.125,
+      "exact_sign_flip_p_directional": 0.0625,
+      "cohen_dz": 1.0158966109389291,
+      "positive_count": 4,
+      "negative_count": 1,
+      "values": [
+        -2.7755575615628914e-17,
+        0.02975,
+        0.005349999999999994,
+        0.006649999999999989,
+        0.024550000000000016
+      ]
+    },
+    "full_vs_base_forgetting": {
+      "n": 5,
+      "mean": 0.014580000000000004,
+      "sample_std": 0.010855908529459874,
+      "bootstrap_95_ci_low": 0.006240000000000012,
+      "bootstrap_95_ci_high": 0.022889999999999987,
+      "exact_sign_flip_p_two_sided": 0.0625,
+      "exact_sign_flip_p_directional": 0.03125,
+      "cohen_dz": 1.3430474253199534,
+      "positive_count": 5,
+      "negative_count": 0,
+      "values": [
+        0.015149999999999997,
+        0.027349999999999985,
+        0.00770000000000004,
+        0.00040000000000001146,
+        0.022299999999999986
+      ]
+    },
+    "full_vs_base_pss": {
+      "n": 5,
+      "mean": -0.14149664079904273,
+      "sample_std": 0.40090275703489536,
+      "bootstrap_95_ci_low": -0.3855833163595773,
+      "bootstrap_95_ci_high": 0.21000634655273787,
+      "exact_sign_flip_p_two_sided": 0.5,
+      "exact_sign_flip_p_directional": 0.25,
+      "cohen_dz": -0.3529450429464784,
+      "positive_count": 1,
+      "negative_count": 4,
+      "values": [
+        -0.3167006109979633,
+        0.5443298969072157,
+        -0.12950450450450435,
+        -0.35215453194650825,
+        -0.45345345345345334
+      ]
+    },
+    "layer3_accuracy_without_layer2": {
+      "n": 5,
+      "mean": -0.011530000000000002,
+      "sample_std": 0.004333243588814272,
+      "bootstrap_95_ci_low": -0.015110000000000007,
+      "bootstrap_95_ci_high": -0.008570000000000012,
+      "exact_sign_flip_p_two_sided": 0.0625,
+      "exact_sign_flip_p_directional": 0.03125,
+      "cohen_dz": -2.660824337169334,
+      "positive_count": 0,
+      "negative_count": 5,
+      "values": [
+        -0.01855000000000001,
+        -0.011549999999999977,
+        -0.011649999999999994,
+        -0.007650000000000018,
+        -0.008250000000000007
+      ]
+    },
+    "layer3_accuracy_with_layer2": {
+      "n": 5,
+      "mean": -0.004060000000000008,
+      "sample_std": 0.0020525593779474514,
+      "bootstrap_95_ci_low": -0.005610000000000009,
+      "bootstrap_95_ci_high": -0.0024399999999999977,
+      "exact_sign_flip_p_two_sided": 0.0625,
+      "exact_sign_flip_p_directional": 0.03125,
+      "cohen_dz": -1.9780182944378384,
+      "positive_count": 0,
+      "negative_count": 5,
+      "values": [
+        -0.005750000000000005,
+        -0.0030000000000000304,
+        -0.0061500000000000166,
+        -0.004250000000000004,
+        -0.0011499999999999844
+      ]
+    },
+    "layer3_retention_without_layer2": {
+      "n": 5,
+      "mean": 0.052099999999999994,
+      "sample_std": 0.0027728595348484463,
+      "bootstrap_95_ci_low": 0.04970000000000001,
+      "bootstrap_95_ci_high": 0.05411999999999999,
+      "exact_sign_flip_p_two_sided": 0.0625,
+      "exact_sign_flip_p_directional": 0.03125,
+      "cohen_dz": 18.78926766582411,
+      "positive_count": 5,
+      "negative_count": 0,
+      "values": [
+        0.05489999999999995,
+        0.053700000000000025,
+        0.048150000000000026,
+        0.0534,
+        0.05034999999999995
+      ]
+    },
+    "layer3_retention_with_layer2": {
+      "n": 5,
+      "mean": 0.03216000000000001,
+      "sample_std": 0.00522103916859469,
+      "bootstrap_95_ci_low": 0.02735000000000002,
+      "bootstrap_95_ci_high": 0.03556999999999997,
+      "exact_sign_flip_p_two_sided": 0.0625,
+      "exact_sign_flip_p_directional": 0.03125,
+      "cohen_dz": 6.159693302713967,
+      "positive_count": 5,
+      "negative_count": 0,
+      "values": [
+        0.0232,
+        0.03694999999999993,
+        0.03365000000000007,
+        0.03350000000000003,
+        0.03350000000000003
+      ]
+    },
+    "layer2_accuracy_with_layer3": {
+      "n": 5,
+      "mean": 0.024789999999999996,
+      "sample_std": 0.011687621657120834,
+      "bootstrap_95_ci_low": 0.016229999999999994,
+      "bootstrap_95_ci_high": 0.034739999999999986,
+      "exact_sign_flip_p_two_sided": 0.0625,
+      "exact_sign_flip_p_directional": 0.03125,
+      "cohen_dz": 2.1210474403829087,
+      "positive_count": 5,
+      "negative_count": 0,
+      "values": [
+        0.018549999999999983,
+        0.041299999999999976,
+        0.016999999999999987,
+        0.014300000000000007,
+        0.032800000000000024
+      ]
+    },
+    "accuracy_penalty_mitigation": {
+      "n": 5,
+      "mean": 0.007469999999999993,
+      "sample_std": 0.0035411156434095705,
+      "bootstrap_95_ci_low": 0.004880000000000018,
+      "bootstrap_95_ci_high": 0.010489999999999989,
+      "exact_sign_flip_p_two_sided": 0.0625,
+      "exact_sign_flip_p_directional": 0.03125,
+      "cohen_dz": 2.1095046737325664,
+      "positive_count": 5,
+      "negative_count": 0,
+      "values": [
+        0.012800000000000006,
+        0.008549999999999947,
+        0.005499999999999977,
+        0.003400000000000014,
+        0.007100000000000023
+      ]
+    },
+    "retention_preservation_fraction": {
+      "n": 5,
+      "mean": 0.6204419239261811,
+      "sample_std": 0.11394586118990424,
+      "bootstrap_95_ci_low": 0.5187916246104968,
+      "bootstrap_95_ci_high": 0.6878443895279784,
+      "exact_sign_flip_p_two_sided": 0.0625,
+      "exact_sign_flip_p_directional": 0.03125,
+      "cohen_dz": 5.445058885395945,
+      "positive_count": 5,
+      "negative_count": 0,
+      "values": [
+        0.422586520947177,
+        0.6880819366852869,
+        0.6988577362409149,
+        0.627340823970038,
+        0.6653426017874888
+      ]
+    }
+  }
+}

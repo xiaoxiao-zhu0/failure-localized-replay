@@ -1,0 +1,645 @@
+{
+  "stage": "D132 causal-parent PRBA transfer confirmation",
+  "status": "completed_not_used_for_hyperparameter_tuning",
+  "seeds": [
+    260,
+    261,
+    262,
+    263,
+    264
+  ],
+  "benchmarks": {
+    "hard": "split_cifar100",
+    "blurry": "equal_exposure_blurry_cifar100"
+  },
+  "methods": {
+    "parent": "causal_er_ace",
+    "candidate": "causal_er_ace_prequential_arbitration_1"
+  },
+  "execution": {
+    "server": "server2",
+    "physical_gpu": 1,
+    "seed_workers": 2,
+    "runtime_authoritative": false
+  },
+  "research_question": "Does the same prequential risk-budget arbitration remain useful when the Persistent-SRRD/Layer-2 parent is removed?",
+  "per_seed": {
+    "260": {
+      "parent": {
+        "hard": {
+          "final_validation_accuracy": 0.14730000000000001,
+          "final_validation_forgetting": 0.3706
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.2363,
+          "final_validation_forgetting": 0.37979999999999997
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.089,
+          "final_validation_forgetting": 0.009199999999999986
+        },
+        "pss": 0.09819999999999998,
+        "mean_accuracy": 0.19180000000000003,
+        "worst_forgetting": 0.37979999999999997
+      },
+      "child": {
+        "hard": {
+          "final_validation_accuracy": 0.1322,
+          "final_validation_forgetting": 0.3174
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.2143,
+          "final_validation_forgetting": 0.3232
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.08209999999999998,
+          "final_validation_forgetting": 0.005799999999999972
+        },
+        "pss": 0.08789999999999995,
+        "mean_accuracy": 0.17325000000000002,
+        "worst_forgetting": 0.3232,
+        "evaluation_source": "deployment_head_per_class_audit_history"
+      },
+      "delta": {
+        "mean_accuracy_delta": -0.01855000000000001,
+        "mean_average_forgetting_improvement": 0.05489999999999995,
+        "worst_stream_average_forgetting_improvement": 0.056599999999999984,
+        "pss_relative_change": -0.10488798370672137,
+        "stream_delta": {
+          "hard": {
+            "accuracy_delta": -0.015100000000000002,
+            "forgetting_delta": -0.05319999999999997
+          },
+          "blurry": {
+            "accuracy_delta": -0.02200000000000002,
+            "forgetting_delta": -0.056599999999999984
+          }
+        }
+      },
+      "mechanism": {
+        "streams": {
+          "hard": {
+            "checks": {
+              "plain_causal_parent_declared": true,
+              "parent_model_exact": true,
+              "parent_memory_exact": true,
+              "parent_replay_exact": true,
+              "calibration_and_arbitration_active": true,
+              "updates_match": true,
+              "valid_alpha": true,
+              "batch_partition_exact": true,
+              "prequential_test_then_train": true,
+              "same_update_leakage_absent": true,
+              "fixed_low_cost_solver": true,
+              "no_fixed_or_tuned_alpha": true,
+              "convex_objective_nonworsening": true,
+              "two_head_forwards_per_batch": true,
+              "no_extra_replay_or_backbone": true,
+              "evaluation_history_observed": true,
+              "no_nonfinite_updates": true,
+              "main_training_contract_unchanged": true,
+              "causal_evidence_only": true
+            },
+            "passes": true,
+            "deployment_alpha": 0.6431286005950874,
+            "arbitration_batches": 3949
+          },
+          "blurry": {
+            "checks": {
+              "plain_causal_parent_declared": true,
+              "parent_model_exact": true,
+              "parent_memory_exact": true,
+              "parent_replay_exact": true,
+              "calibration_and_arbitration_active": true,
+              "updates_match": true,
+              "valid_alpha": true,
+              "batch_partition_exact": true,
+              "prequential_test_then_train": true,
+              "same_update_leakage_absent": true,
+              "fixed_low_cost_solver": true,
+              "no_fixed_or_tuned_alpha": true,
+              "convex_objective_nonworsening": true,
+              "two_head_forwards_per_batch": true,
+              "no_extra_replay_or_backbone": true,
+              "evaluation_history_observed": true,
+              "no_nonfinite_updates": true,
+              "main_training_contract_unchanged": true,
+              "causal_evidence_only": true
+            },
+            "passes": true,
+            "deployment_alpha": 0.5213476958671399,
+            "arbitration_batches": 3944
+          }
+        },
+        "passes": true
+      }
+    },
+    "261": {
+      "parent": {
+        "hard": {
+          "final_validation_accuracy": 0.1455,
+          "final_validation_forgetting": 0.3681
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.1928,
+          "final_validation_forgetting": 0.3693
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.04730000000000001,
+          "final_validation_forgetting": 0.0012000000000000344
+        },
+        "pss": 0.04850000000000004,
+        "mean_accuracy": 0.16915,
+        "worst_forgetting": 0.3693
+      },
+      "child": {
+        "hard": {
+          "final_validation_accuracy": 0.1353,
+          "final_validation_forgetting": 0.3215
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.1799,
+          "final_validation_forgetting": 0.3085
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.0446,
+          "final_validation_forgetting": -0.013000000000000012
+        },
+        "pss": 0.05760000000000001,
+        "mean_accuracy": 0.15760000000000002,
+        "worst_forgetting": 0.3215,
+        "evaluation_source": "deployment_head_per_class_audit_history"
+      },
+      "delta": {
+        "mean_accuracy_delta": -0.011549999999999977,
+        "mean_average_forgetting_improvement": 0.053700000000000025,
+        "worst_stream_average_forgetting_improvement": 0.04780000000000001,
+        "pss_relative_change": 0.18762886597938055,
+        "stream_delta": {
+          "hard": {
+            "accuracy_delta": -0.010199999999999987,
+            "forgetting_delta": -0.046599999999999975
+          },
+          "blurry": {
+            "accuracy_delta": -0.012899999999999995,
+            "forgetting_delta": -0.06080000000000002
+          }
+        }
+      },
+      "mechanism": {
+        "streams": {
+          "hard": {
+            "checks": {
+              "plain_causal_parent_declared": true,
+              "parent_model_exact": true,
+              "parent_memory_exact": true,
+              "parent_replay_exact": true,
+              "calibration_and_arbitration_active": true,
+              "updates_match": true,
+              "valid_alpha": true,
+              "batch_partition_exact": true,
+              "prequential_test_then_train": true,
+              "same_update_leakage_absent": true,
+              "fixed_low_cost_solver": true,
+              "no_fixed_or_tuned_alpha": true,
+              "convex_objective_nonworsening": true,
+              "two_head_forwards_per_batch": true,
+              "no_extra_replay_or_backbone": true,
+              "evaluation_history_observed": true,
+              "no_nonfinite_updates": true,
+              "main_training_contract_unchanged": true,
+              "causal_evidence_only": true
+            },
+            "passes": true,
+            "deployment_alpha": 0.6607383791782729,
+            "arbitration_batches": 3949
+          },
+          "blurry": {
+            "checks": {
+              "plain_causal_parent_declared": true,
+              "parent_model_exact": true,
+              "parent_memory_exact": true,
+              "parent_replay_exact": true,
+              "calibration_and_arbitration_active": true,
+              "updates_match": true,
+              "valid_alpha": true,
+              "batch_partition_exact": true,
+              "prequential_test_then_train": true,
+              "same_update_leakage_absent": true,
+              "fixed_low_cost_solver": true,
+              "no_fixed_or_tuned_alpha": true,
+              "convex_objective_nonworsening": true,
+              "two_head_forwards_per_batch": true,
+              "no_extra_replay_or_backbone": true,
+              "evaluation_history_observed": true,
+              "no_nonfinite_updates": true,
+              "main_training_contract_unchanged": true,
+              "causal_evidence_only": true
+            },
+            "passes": true,
+            "deployment_alpha": 0.5199660481110547,
+            "arbitration_batches": 3944
+          }
+        },
+        "passes": true
+      }
+    },
+    "262": {
+      "parent": {
+        "hard": {
+          "final_validation_accuracy": 0.1527,
+          "final_validation_forgetting": 0.3506
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.1949,
+          "final_validation_forgetting": 0.3972
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.04219999999999999,
+          "final_validation_forgetting": 0.046599999999999975
+        },
+        "pss": 0.08879999999999996,
+        "mean_accuracy": 0.1738,
+        "worst_forgetting": 0.3972
+      },
+      "child": {
+        "hard": {
+          "final_validation_accuracy": 0.1391,
+          "final_validation_forgetting": 0.3124
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.1852,
+          "final_validation_forgetting": 0.3391
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.0461,
+          "final_validation_forgetting": 0.0267
+        },
+        "pss": 0.0728,
+        "mean_accuracy": 0.16215000000000002,
+        "worst_forgetting": 0.3391,
+        "evaluation_source": "deployment_head_per_class_audit_history"
+      },
+      "delta": {
+        "mean_accuracy_delta": -0.011649999999999994,
+        "mean_average_forgetting_improvement": 0.048150000000000026,
+        "worst_stream_average_forgetting_improvement": 0.058099999999999985,
+        "pss_relative_change": -0.18018018018017978,
+        "stream_delta": {
+          "hard": {
+            "accuracy_delta": -0.013600000000000001,
+            "forgetting_delta": -0.03820000000000001
+          },
+          "blurry": {
+            "accuracy_delta": -0.009699999999999986,
+            "forgetting_delta": -0.058099999999999985
+          }
+        }
+      },
+      "mechanism": {
+        "streams": {
+          "hard": {
+            "checks": {
+              "plain_causal_parent_declared": true,
+              "parent_model_exact": true,
+              "parent_memory_exact": true,
+              "parent_replay_exact": true,
+              "calibration_and_arbitration_active": true,
+              "updates_match": true,
+              "valid_alpha": true,
+              "batch_partition_exact": true,
+              "prequential_test_then_train": true,
+              "same_update_leakage_absent": true,
+              "fixed_low_cost_solver": true,
+              "no_fixed_or_tuned_alpha": true,
+              "convex_objective_nonworsening": true,
+              "two_head_forwards_per_batch": true,
+              "no_extra_replay_or_backbone": true,
+              "evaluation_history_observed": true,
+              "no_nonfinite_updates": true,
+              "main_training_contract_unchanged": true,
+              "causal_evidence_only": true
+            },
+            "passes": true,
+            "deployment_alpha": 0.6567386521904279,
+            "arbitration_batches": 3949
+          },
+          "blurry": {
+            "checks": {
+              "plain_causal_parent_declared": true,
+              "parent_model_exact": true,
+              "parent_memory_exact": true,
+              "parent_replay_exact": true,
+              "calibration_and_arbitration_active": true,
+              "updates_match": true,
+              "valid_alpha": true,
+              "batch_partition_exact": true,
+              "prequential_test_then_train": true,
+              "same_update_leakage_absent": true,
+              "fixed_low_cost_solver": true,
+              "no_fixed_or_tuned_alpha": true,
+              "convex_objective_nonworsening": true,
+              "two_head_forwards_per_batch": true,
+              "no_extra_replay_or_backbone": true,
+              "evaluation_history_observed": true,
+              "no_nonfinite_updates": true,
+              "main_training_contract_unchanged": true,
+              "causal_evidence_only": true
+            },
+            "passes": true,
+            "deployment_alpha": 0.5489147874936613,
+            "arbitration_batches": 3944
+          }
+        },
+        "passes": true
+      }
+    },
+    "263": {
+      "parent": {
+        "hard": {
+          "final_validation_accuracy": 0.14730000000000001,
+          "final_validation_forgetting": 0.3471
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.2033,
+          "final_validation_forgetting": 0.3584
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.055999999999999994,
+          "final_validation_forgetting": 0.011299999999999977
+        },
+        "pss": 0.06729999999999997,
+        "mean_accuracy": 0.1753,
+        "worst_forgetting": 0.3584
+      },
+      "child": {
+        "hard": {
+          "final_validation_accuracy": 0.1392,
+          "final_validation_forgetting": 0.2969
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.1961,
+          "final_validation_forgetting": 0.3018
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.056900000000000006,
+          "final_validation_forgetting": 0.0049000000000000155
+        },
+        "pss": 0.06180000000000002,
+        "mean_accuracy": 0.16765,
+        "worst_forgetting": 0.3018,
+        "evaluation_source": "deployment_head_per_class_audit_history"
+      },
+      "delta": {
+        "mean_accuracy_delta": -0.007650000000000018,
+        "mean_average_forgetting_improvement": 0.0534,
+        "worst_stream_average_forgetting_improvement": 0.056599999999999984,
+        "pss_relative_change": -0.0817236255572058,
+        "stream_delta": {
+          "hard": {
+            "accuracy_delta": -0.008100000000000024,
+            "forgetting_delta": -0.05020000000000002
+          },
+          "blurry": {
+            "accuracy_delta": -0.007200000000000012,
+            "forgetting_delta": -0.056599999999999984
+          }
+        }
+      },
+      "mechanism": {
+        "streams": {
+          "hard": {
+            "checks": {
+              "plain_causal_parent_declared": true,
+              "parent_model_exact": true,
+              "parent_memory_exact": true,
+              "parent_replay_exact": true,
+              "calibration_and_arbitration_active": true,
+              "updates_match": true,
+              "valid_alpha": true,
+              "batch_partition_exact": true,
+              "prequential_test_then_train": true,
+              "same_update_leakage_absent": true,
+              "fixed_low_cost_solver": true,
+              "no_fixed_or_tuned_alpha": true,
+              "convex_objective_nonworsening": true,
+              "two_head_forwards_per_batch": true,
+              "no_extra_replay_or_backbone": true,
+              "evaluation_history_observed": true,
+              "no_nonfinite_updates": true,
+              "main_training_contract_unchanged": true,
+              "causal_evidence_only": true
+            },
+            "passes": true,
+            "deployment_alpha": 0.6294418879779691,
+            "arbitration_batches": 3949
+          },
+          "blurry": {
+            "checks": {
+              "plain_causal_parent_declared": true,
+              "parent_model_exact": true,
+              "parent_memory_exact": true,
+              "parent_replay_exact": true,
+              "calibration_and_arbitration_active": true,
+              "updates_match": true,
+              "valid_alpha": true,
+              "batch_partition_exact": true,
+              "prequential_test_then_train": true,
+              "same_update_leakage_absent": true,
+              "fixed_low_cost_solver": true,
+              "no_fixed_or_tuned_alpha": true,
+              "convex_objective_nonworsening": true,
+              "two_head_forwards_per_batch": true,
+              "no_extra_replay_or_backbone": true,
+              "evaluation_history_observed": true,
+              "no_nonfinite_updates": true,
+              "main_training_contract_unchanged": true,
+              "causal_evidence_only": true
+            },
+            "passes": true,
+            "deployment_alpha": 0.5876761972299696,
+            "arbitration_batches": 3944
+          }
+        },
+        "passes": true
+      }
+    },
+    "264": {
+      "parent": {
+        "hard": {
+          "final_validation_accuracy": 0.1504,
+          "final_validation_forgetting": 0.3368
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.2054,
+          "final_validation_forgetting": 0.3817
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.05499999999999999,
+          "final_validation_forgetting": 0.044899999999999995
+        },
+        "pss": 0.09989999999999999,
+        "mean_accuracy": 0.1779,
+        "worst_forgetting": 0.3817
+      },
+      "child": {
+        "hard": {
+          "final_validation_accuracy": 0.1402,
+          "final_validation_forgetting": 0.3089
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.1991,
+          "final_validation_forgetting": 0.3089
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.05890000000000001,
+          "final_validation_forgetting": 0.0
+        },
+        "pss": 0.05890000000000001,
+        "mean_accuracy": 0.16965,
+        "worst_forgetting": 0.3089,
+        "evaluation_source": "deployment_head_per_class_audit_history"
+      },
+      "delta": {
+        "mean_accuracy_delta": -0.008250000000000007,
+        "mean_average_forgetting_improvement": 0.05034999999999995,
+        "worst_stream_average_forgetting_improvement": 0.07279999999999998,
+        "pss_relative_change": -0.41041041041041026,
+        "stream_delta": {
+          "hard": {
+            "accuracy_delta": -0.010200000000000015,
+            "forgetting_delta": -0.02789999999999998
+          },
+          "blurry": {
+            "accuracy_delta": -0.0063,
+            "forgetting_delta": -0.07279999999999998
+          }
+        }
+      },
+      "mechanism": {
+        "streams": {
+          "hard": {
+            "checks": {
+              "plain_causal_parent_declared": true,
+              "parent_model_exact": true,
+              "parent_memory_exact": true,
+              "parent_replay_exact": true,
+              "calibration_and_arbitration_active": true,
+              "updates_match": true,
+              "valid_alpha": true,
+              "batch_partition_exact": true,
+              "prequential_test_then_train": true,
+              "same_update_leakage_absent": true,
+              "fixed_low_cost_solver": true,
+              "no_fixed_or_tuned_alpha": true,
+              "convex_objective_nonworsening": true,
+              "two_head_forwards_per_batch": true,
+              "no_extra_replay_or_backbone": true,
+              "evaluation_history_observed": true,
+              "no_nonfinite_updates": true,
+              "main_training_contract_unchanged": true,
+              "causal_evidence_only": true
+            },
+            "passes": true,
+            "deployment_alpha": 0.7174447842808306,
+            "arbitration_batches": 3949
+          },
+          "blurry": {
+            "checks": {
+              "plain_causal_parent_declared": true,
+              "parent_model_exact": true,
+              "parent_memory_exact": true,
+              "parent_replay_exact": true,
+              "calibration_and_arbitration_active": true,
+              "updates_match": true,
+              "valid_alpha": true,
+              "batch_partition_exact": true,
+              "prequential_test_then_train": true,
+              "same_update_leakage_absent": true,
+              "fixed_low_cost_solver": true,
+              "no_fixed_or_tuned_alpha": true,
+              "convex_objective_nonworsening": true,
+              "two_head_forwards_per_batch": true,
+              "no_extra_replay_or_backbone": true,
+              "evaluation_history_observed": true,
+              "no_nonfinite_updates": true,
+              "main_training_contract_unchanged": true,
+              "causal_evidence_only": true
+            },
+            "passes": true,
+            "deployment_alpha": 0.5303630712791582,
+            "arbitration_batches": 3944
+          }
+        },
+        "passes": true
+      }
+    }
+  },
+  "aggregate": {
+    "mean_accuracy_delta": {
+      "n": 5,
+      "mean": -0.011530000000000002,
+      "sample_std": 0.004333243588814272
+    },
+    "mean_average_forgetting_improvement": {
+      "n": 5,
+      "mean": 0.052099999999999994,
+      "sample_std": 0.0027728595348484463
+    },
+    "worst_stream_average_forgetting_improvement": {
+      "n": 5,
+      "mean": 0.05837999999999999,
+      "sample_std": 0.009031721873485688
+    },
+    "pss_relative_change": {
+      "n": 5,
+      "mean": -0.11791466677502734,
+      "sample_std": 0.21463171395943503
+    },
+    "stream_delta": {
+      "hard": {
+        "accuracy_delta": {
+          "n": 5,
+          "mean": -0.011440000000000006,
+          "sample_std": 0.002841302518212372
+        },
+        "forgetting_delta": {
+          "n": 5,
+          "mean": -0.043219999999999995,
+          "sample_std": 0.010242655905574492
+        }
+      },
+      "blurry": {
+        "accuracy_delta": {
+          "n": 5,
+          "mean": -0.011620000000000002,
+          "sample_std": 0.006342475857265843
+        },
+        "forgetting_delta": {
+          "n": 5,
+          "mean": -0.06097999999999999,
+          "sample_std": 0.006826565754462484
+        }
+      }
+    }
+  },
+  "gate": {
+    "required_direction_count": 4,
+    "forgetting_positive_seed_count": 5,
+    "accuracy_positive_seed_count": 0,
+    "checks": {
+      "all_mechanism_audits_pass": true,
+      "mean_accuracy_within_minus_0_5pp": false,
+      "mean_forgetting_improves_at_least_0_5pp": true,
+      "forgetting_improves_in_at_least_two_thirds_seeds": true,
+      "worst_stream_forgetting_does_not_worsen": true,
+      "mean_pss_worsening_at_most_10pct": true,
+      "hard_accuracy_within_minus_0_75pp": false,
+      "hard_forgetting_worsening_at_most_0_25pp": true,
+      "blurry_accuracy_within_minus_0_75pp": false,
+      "blurry_forgetting_worsening_at_most_0_25pp": true
+    },
+    "passes": false,
+    "interpretation": "mechanism or benefit is parent-dependent under this protocol"
+  }
+}

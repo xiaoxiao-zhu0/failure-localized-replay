@@ -1,0 +1,21 @@
+{
+  "title": "Failure-Localized Replay: Reproducibility Artifact",
+  "upload_type": "software",
+  "description": "Code, configurations, protocols, frozen analysis outputs, and figures for the Pattern Recognition manuscript on failure-localized replay for online continual learning.",
+  "creators": [
+    {
+      "name": "REPLACE WITH AUTHOR NAME",
+      "orcid": "REPLACE WITH ORCID IF AVAILABLE"
+    }
+  ],
+  "keywords": [
+    "online continual learning",
+    "experience replay",
+    "catastrophic forgetting",
+    "prequential evaluation",
+    "Pattern Recognition"
+  ],
+  "license": "MIT",
+  "related_identifiers": [],
+  "notes": "CIFAR-100 and Tiny ImageNet are public datasets and are not redistributed in this record. Replace the creator fields before depositing."
+}

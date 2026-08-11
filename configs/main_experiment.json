@@ -1,0 +1,41 @@
+{
+  "benchmarks": [
+    "split_cifar100",
+    "equal_exposure_blurry_cifar100"
+  ],
+  "n_experiences": 10,
+  "model": "slim_resnet18",
+  "train_epochs": 5,
+  "train_mb_size": 64,
+  "replay_mb_size": 64,
+  "eval_mb_size": 128,
+  "memory_size": 100,
+  "learning_rate": 0.05,
+  "momentum": 0.9,
+  "weight_decay": 0.0,
+  "validation_fraction": 0.0,
+  "semantic_memory_fraction": 0.75,
+  "reservoir_memory_fraction": 0.25,
+  "layer2_ema_decay": 0.99,
+  "layer2_wilson_z": 1.96,
+  "layer2_residual_threshold": 0.5,
+  "layer2_max_swaps_per_update": 1,
+  "seeds": [260, 261, 262, 263, 264],
+  "methods": {
+    "base": "causal_er_ace",
+    "layer2": "persistent_srrd_selective_swap_1",
+    "layer3_only": "causal_er_ace_prequential_arbitration_1",
+    "full": "persistent_srrd_prequential_arbitration_1"
+  },
+  "evaluation": {
+    "prequential_test_then_train": true,
+    "historical_reference": "test_stream",
+    "metrics": [
+      "final_accuracy",
+      "mean_average_forgetting",
+      "worst_stream_forgetting",
+      "backward_transfer",
+      "prequential_stability_score"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+data/
+datasets/
+results/raw_summaries/
+logs/
+*.pt
+*.pth
+*.ckpt
+*.tar
+*.tar.gz
