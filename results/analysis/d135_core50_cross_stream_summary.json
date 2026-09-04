@@ -1,0 +1,771 @@
+{
+  "stage": "D135 matched CORe50 hard/blurry cross-stream confirmation",
+  "status": "completed",
+  "benchmarks": {
+    "hard": "core50",
+    "blurry": "equal_exposure_blurry_core50"
+  },
+  "seeds": [
+    319,
+    320,
+    321
+  ],
+  "methods": {
+    "A": "causal_er_ace",
+    "B": "semantic_proto_hybrid_75_25",
+    "C": "persistent_srrd_selective_swap_1",
+    "D": "persistent_srrd_prequential_arbitration_1"
+  },
+  "protocol": {
+    "learning_rate": 0.01,
+    "train_epochs": 5,
+    "memory_size": 100,
+    "paired_seed_policy": true
+  },
+  "protocol_checks": [
+    {
+      "seed": 319,
+      "method": "causal_er_ace",
+      "hard": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      },
+      "blurry": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      }
+    },
+    {
+      "seed": 319,
+      "method": "semantic_proto_hybrid_75_25",
+      "hard": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      },
+      "blurry": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      }
+    },
+    {
+      "seed": 319,
+      "method": "persistent_srrd_selective_swap_1",
+      "hard": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      },
+      "blurry": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      }
+    },
+    {
+      "seed": 319,
+      "method": "persistent_srrd_prequential_arbitration_1",
+      "hard": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      },
+      "blurry": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      }
+    },
+    {
+      "seed": 320,
+      "method": "causal_er_ace",
+      "hard": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      },
+      "blurry": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      }
+    },
+    {
+      "seed": 320,
+      "method": "semantic_proto_hybrid_75_25",
+      "hard": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      },
+      "blurry": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      }
+    },
+    {
+      "seed": 320,
+      "method": "persistent_srrd_selective_swap_1",
+      "hard": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      },
+      "blurry": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      }
+    },
+    {
+      "seed": 320,
+      "method": "persistent_srrd_prequential_arbitration_1",
+      "hard": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      },
+      "blurry": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      }
+    },
+    {
+      "seed": 321,
+      "method": "causal_er_ace",
+      "hard": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      },
+      "blurry": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      }
+    },
+    {
+      "seed": 321,
+      "method": "semantic_proto_hybrid_75_25",
+      "hard": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      },
+      "blurry": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      }
+    },
+    {
+      "seed": 321,
+      "method": "persistent_srrd_selective_swap_1",
+      "hard": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      },
+      "blurry": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      }
+    },
+    {
+      "seed": 321,
+      "method": "persistent_srrd_prequential_arbitration_1",
+      "hard": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      },
+      "blurry": {
+        "benchmark": true,
+        "seed": true,
+        "experiences": true,
+        "epochs": true,
+        "memory": true,
+        "learning_rate": true
+      }
+    }
+  ],
+  "all_protocol_checks_pass": true,
+  "per_method": {
+    "A": {
+      "319": {
+        "seed": 319,
+        "method": "causal_er_ace",
+        "hard": {
+          "final_validation_accuracy": 0.18561439751506853,
+          "final_validation_forgetting": 0.30899906627765816
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.22237680190816295,
+          "final_validation_forgetting": 0.2873242514756525
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.03676240439309442,
+          "final_validation_forgetting": -0.02167481480200567
+        },
+        "pss": 0.05843721919510009,
+        "mean_accuracy": 0.20399559971161574,
+        "mean_forgetting": 0.29816165887665536,
+        "worst_forgetting": 0.30899906627765816
+      },
+      "320": {
+        "seed": 320,
+        "method": "causal_er_ace",
+        "hard": {
+          "final_validation_accuracy": 0.19671373202484144,
+          "final_validation_forgetting": 0.277247576866682
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.21762895218259984,
+          "final_validation_forgetting": 0.27542625193069153
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.020915220157758402,
+          "final_validation_forgetting": -0.0018213249359904649
+        },
+        "pss": 0.022736545093748867,
+        "mean_accuracy": 0.20717134210372062,
+        "mean_forgetting": 0.2763369143986868,
+        "worst_forgetting": 0.277247576866682
+      },
+      "321": {
+        "seed": 321,
+        "method": "causal_er_ace",
+        "hard": {
+          "final_validation_accuracy": 0.190531100750857,
+          "final_validation_forgetting": 0.259824618776983
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.2411506952296862,
+          "final_validation_forgetting": 0.2735073594114883
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.050619594478829216,
+          "final_validation_forgetting": 0.013682740634505308
+        },
+        "pss": 0.06430233511333452,
+        "mean_accuracy": 0.21584089799027162,
+        "mean_forgetting": 0.26666598909423567,
+        "worst_forgetting": 0.2735073594114883
+      }
+    },
+    "B": {
+      "319": {
+        "seed": 319,
+        "method": "semantic_proto_hybrid_75_25",
+        "hard": {
+          "final_validation_accuracy": 0.23147516390596976,
+          "final_validation_forgetting": 0.2087949603022886
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.2395802222565552,
+          "final_validation_forgetting": 0.26662537272679115
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.008105058350585448,
+          "final_validation_forgetting": 0.05783041242450254
+        },
+        "pss": 0.06593547077508799,
+        "mean_accuracy": 0.23552769308126248,
+        "mean_forgetting": 0.23771016651453988,
+        "worst_forgetting": 0.26662537272679115
+      },
+      "320": {
+        "seed": 320,
+        "method": "semantic_proto_hybrid_75_25",
+        "hard": {
+          "final_validation_accuracy": 0.20926476904155536,
+          "final_validation_forgetting": 0.28680186885829917
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.2479159215586573,
+          "final_validation_forgetting": 0.2872170314420172
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.03865115251710194,
+          "final_validation_forgetting": 0.0004151625837180428
+        },
+        "pss": 0.03906631510081998,
+        "mean_accuracy": 0.22859034530010633,
+        "mean_forgetting": 0.2870094501501582,
+        "worst_forgetting": 0.2872170314420172
+      },
+      "321": {
+        "seed": 321,
+        "method": "semantic_proto_hybrid_75_25",
+        "hard": {
+          "final_validation_accuracy": 0.2234000307727959,
+          "final_validation_forgetting": 0.21925179315575757
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.24967427348378773,
+          "final_validation_forgetting": 0.2489901246411495
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.026274242710991824,
+          "final_validation_forgetting": 0.029738331485391928
+        },
+        "pss": 0.05601257419638375,
+        "mean_accuracy": 0.23653715212829182,
+        "mean_forgetting": 0.23412095889845352,
+        "worst_forgetting": 0.2489901246411495
+      }
+    },
+    "C": {
+      "319": {
+        "seed": 319,
+        "method": "persistent_srrd_selective_swap_1",
+        "hard": {
+          "final_validation_accuracy": 0.20109987284053224,
+          "final_validation_forgetting": 0.24167932273140882
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.23886270742486485,
+          "final_validation_forgetting": 0.28254382334028366
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.037762834584332605,
+          "final_validation_forgetting": 0.04086450060887484
+        },
+        "pss": 0.07862733519320744,
+        "mean_accuracy": 0.21998129013269854,
+        "mean_forgetting": 0.26211157303584626,
+        "worst_forgetting": 0.28254382334028366
+      },
+      "320": {
+        "seed": 320,
+        "method": "persistent_srrd_selective_swap_1",
+        "hard": {
+          "final_validation_accuracy": 0.22695349624292652,
+          "final_validation_forgetting": 0.23999142153297823
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.2533496083699305,
+          "final_validation_forgetting": 0.2740676540099419
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.026396112127003962,
+          "final_validation_forgetting": 0.03407623247696365
+        },
+        "pss": 0.06047234460396761,
+        "mean_accuracy": 0.24015155230642848,
+        "mean_forgetting": 0.25702953777146004,
+        "worst_forgetting": 0.2740676540099419
+      },
+      "321": {
+        "seed": 321,
+        "method": "persistent_srrd_selective_swap_1",
+        "hard": {
+          "final_validation_accuracy": 0.23028730676372186,
+          "final_validation_forgetting": 0.21049004505210603
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.27531977199047264,
+          "final_validation_forgetting": 0.2408772005439288
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.04503246522675078,
+          "final_validation_forgetting": 0.030387155491822776
+        },
+        "pss": 0.07541962071857355,
+        "mean_accuracy": 0.25280353937709726,
+        "mean_forgetting": 0.2256836227980174,
+        "worst_forgetting": 0.2408772005439288
+      }
+    },
+    "D": {
+      "319": {
+        "seed": 319,
+        "method": "persistent_srrd_prequential_arbitration_1",
+        "hard": {
+          "final_validation_accuracy": 0.20083558310258193,
+          "final_validation_forgetting": 0.23272436107344868
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.23432697938448227,
+          "final_validation_forgetting": 0.2637288476105628
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.03349139628190034,
+          "final_validation_forgetting": 0.03100448653711413
+        },
+        "pss": 0.06449588281901447,
+        "mean_accuracy": 0.2175812812435321,
+        "mean_forgetting": 0.24822660434200575,
+        "worst_forgetting": 0.2637288476105628
+      },
+      "320": {
+        "seed": 320,
+        "method": "persistent_srrd_prequential_arbitration_1",
+        "hard": {
+          "final_validation_accuracy": 0.21964957286372605,
+          "final_validation_forgetting": 0.24711502151249326
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.2572486631310894,
+          "final_validation_forgetting": 0.2472479553998976
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.037599090267363355,
+          "final_validation_forgetting": 0.0001329338874043462
+        },
+        "pss": 0.0377320241547677,
+        "mean_accuracy": 0.23844911799740773,
+        "mean_forgetting": 0.24718148845619542,
+        "worst_forgetting": 0.2472479553998976
+      },
+      "321": {
+        "seed": 321,
+        "method": "persistent_srrd_prequential_arbitration_1",
+        "hard": {
+          "final_validation_accuracy": 0.23424619492870988,
+          "final_validation_forgetting": 0.20899651058862379
+        },
+        "blurry": {
+          "final_validation_accuracy": 0.2774582205793379,
+          "final_validation_forgetting": 0.22128994995481566
+        },
+        "blurry_minus_hard": {
+          "final_validation_accuracy": 0.04321202565062801,
+          "final_validation_forgetting": 0.012293439366191872
+        },
+        "pss": 0.05550546501681988,
+        "mean_accuracy": 0.2558522077540239,
+        "mean_forgetting": 0.21514323027171972,
+        "worst_forgetting": 0.22128994995481566
+      }
+    }
+  },
+  "aggregate": {
+    "A": {
+      "method": "causal_er_ace",
+      "accuracy": {
+        "n": 3,
+        "mean": 0.209002613268536,
+        "sample_std": 0.006131308048605548
+      },
+      "mean_forgetting": {
+        "n": 3,
+        "mean": 0.28038818745652594,
+        "sample_std": 0.016133936711252034
+      },
+      "pss": {
+        "n": 3,
+        "mean": 0.04849203313406116,
+        "sample_std": 0.022496861321739614
+      },
+      "worst_forgetting": {
+        "n": 3,
+        "mean": 0.2865846675186095,
+        "sample_std": 0.019501314326225965
+      }
+    },
+    "B": {
+      "method": "semantic_proto_hybrid_75_25",
+      "accuracy": {
+        "n": 3,
+        "mean": 0.23355173016988687,
+        "sample_std": 0.004326228930774798
+      },
+      "mean_forgetting": {
+        "n": 3,
+        "mean": 0.25294685852105053,
+        "sample_std": 0.029553607465017877
+      },
+      "pss": {
+        "n": 3,
+        "mean": 0.05367145335743057,
+        "sample_std": 0.013586703674878164
+      },
+      "worst_forgetting": {
+        "n": 3,
+        "mean": 0.2676108429366526,
+        "sample_std": 0.019132497603330564
+      }
+    },
+    "C": {
+      "method": "persistent_srrd_selective_swap_1",
+      "accuracy": {
+        "n": 3,
+        "mean": 0.2376454606054081,
+        "sample_std": 0.016554014107635663
+      },
+      "mean_forgetting": {
+        "n": 3,
+        "mean": 0.24827491120177456,
+        "sample_std": 0.01972895092024449
+      },
+      "pss": {
+        "n": 3,
+        "mean": 0.07150643350524953,
+        "sample_std": 0.009689463166178953
+      },
+      "worst_forgetting": {
+        "n": 3,
+        "mean": 0.26582955929805147,
+        "sample_std": 0.022021047140746677
+      }
+    },
+    "D": {
+      "method": "persistent_srrd_prequential_arbitration_1",
+      "accuracy": {
+        "n": 3,
+        "mean": 0.23729420233165457,
+        "sample_std": 0.019161584658871966
+      },
+      "mean_forgetting": {
+        "n": 3,
+        "mean": 0.23685044102330696,
+        "sample_std": 0.018806257356636963
+      },
+      "pss": {
+        "n": 3,
+        "mean": 0.05257779066353402,
+        "sample_std": 0.013620003321919935
+      },
+      "worst_forgetting": {
+        "n": 3,
+        "mean": 0.24408891765509202,
+        "sample_std": 0.021395084672970452
+      }
+    }
+  },
+  "comparisons": {
+    "B-A": {
+      "per_seed": [
+        {
+          "seed": 319,
+          "accuracy_delta_pp": 3.1532093369646743,
+          "forgetting_improvement_pp": 6.0451492362115475,
+          "pss_delta_pp": 0.7498251579987902
+        },
+        {
+          "seed": 320,
+          "accuracy_delta_pp": 2.1419003196385704,
+          "forgetting_improvement_pp": -1.0672535751471424,
+          "pss_delta_pp": 1.6329770007071116
+        },
+        {
+          "seed": 321,
+          "accuracy_delta_pp": 2.0696254138020205,
+          "forgetting_improvement_pp": 3.2545030195782143,
+          "pss_delta_pp": -0.8289760916950772
+        }
+      ],
+      "accuracy_delta_pp": {
+        "n": 3,
+        "mean": 2.4549116901350883,
+        "sample_std": 0.6058222661632894
+      },
+      "forgetting_improvement_pp": {
+        "n": 3,
+        "mean": 2.74413289354754,
+        "sample_std": 3.583563406291868
+      },
+      "pss_delta_pp": {
+        "n": 3,
+        "mean": 0.5179420223369415,
+        "sample_std": 1.2472492127680233
+      },
+      "accuracy_improves_count": 3,
+      "forgetting_improves_count": 2
+    },
+    "C-B": {
+      "per_seed": [
+        {
+          "seed": 319,
+          "accuracy_delta_pp": -1.5546402948563935,
+          "forgetting_improvement_pp": -2.4401406521306375,
+          "pss_delta_pp": 1.2691864418119452
+        },
+        {
+          "seed": 320,
+          "accuracy_delta_pp": 1.1561207006322154,
+          "forgetting_improvement_pp": 2.997991237869818,
+          "pss_delta_pp": 2.1406029503147628
+        },
+        {
+          "seed": 321,
+          "accuracy_delta_pp": 1.6266387248805443,
+          "forgetting_improvement_pp": 0.8437336100436121,
+          "pss_delta_pp": 1.9407046522189804
+        }
+      ],
+      "accuracy_delta_pp": {
+        "n": 3,
+        "mean": 0.40937304355212206,
+        "sample_std": 1.7170783610163398
+      },
+      "forgetting_improvement_pp": {
+        "n": 3,
+        "mean": 0.46719473192759753,
+        "sample_std": 2.7385499371582824
+      },
+      "pss_delta_pp": {
+        "n": 3,
+        "mean": 1.7834980147818962,
+        "sample_std": 0.4564834366803646
+      },
+      "accuracy_improves_count": 2,
+      "forgetting_improves_count": 2
+    },
+    "D-C": {
+      "per_seed": [
+        {
+          "seed": 319,
+          "accuracy_delta_pp": -0.2400008889166444,
+          "forgetting_improvement_pp": 1.388496869384051,
+          "pss_delta_pp": -1.4131452374192972
+        },
+        {
+          "seed": 320,
+          "accuracy_delta_pp": -0.1702434309020756,
+          "forgetting_improvement_pp": 0.9848049315264618,
+          "pss_delta_pp": -2.274032044919991
+        },
+        {
+          "seed": 321,
+          "accuracy_delta_pp": 0.3048668376926633,
+          "forgetting_improvement_pp": 1.0540392526297682,
+          "pss_delta_pp": -1.9914155701753673
+        }
+      ],
+      "accuracy_delta_pp": {
+        "n": 3,
+        "mean": -0.03512582737535223,
+        "sample_std": 0.29650090212713087
+      },
+      "forgetting_improvement_pp": {
+        "n": 3,
+        "mean": 1.1424470178467603,
+        "sample_std": 0.2158790051992111
+      },
+      "pss_delta_pp": {
+        "n": 3,
+        "mean": -1.8928642841715517,
+        "sample_std": 0.43882318855313296
+      },
+      "accuracy_improves_count": 1,
+      "forgetting_improves_count": 3
+    },
+    "D-A": {
+      "per_seed": [
+        {
+          "seed": 319,
+          "accuracy_delta_pp": 1.358568153191636,
+          "forgetting_improvement_pp": 4.9935054534649606,
+          "pss_delta_pp": 0.6058663623914384
+        },
+        {
+          "seed": 320,
+          "accuracy_delta_pp": 3.1277775893687103,
+          "forgetting_improvement_pp": 2.9155425942491373,
+          "pss_delta_pp": 1.4995479061018835
+        },
+        {
+          "seed": 321,
+          "accuracy_delta_pp": 4.001130976375228,
+          "forgetting_improvement_pp": 5.152275882251595,
+          "pss_delta_pp": -0.8796870096514642
+        }
+      ],
+      "accuracy_delta_pp": {
+        "n": 3,
+        "mean": 2.829158906311858,
+        "sample_std": 1.3463522596337725
+      },
+      "forgetting_improvement_pp": {
+        "n": 3,
+        "mean": 4.353774643321898,
+        "sample_std": 1.2480727472784974
+      },
+      "pss_delta_pp": {
+        "n": 3,
+        "mean": 0.40857575294728593,
+        "sample_std": 1.2018246063865117
+      },
+      "accuracy_improves_count": 3,
+      "forgetting_improves_count": 3
+    }
+  },
+  "interpretation_note": "PSS is an auxiliary paired hard/blurry sensitivity measure; lower is better. All effects are descriptive with three paired seeds."
+}
