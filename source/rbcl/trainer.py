@@ -36,8 +36,9 @@ from .causal_prba import PrequentialRiskBudgetedDualHeadCausalERACE
 from .counterfactual_accuracy import CausalHybridAccuracyCorrectionAudit
 from .counterfactual_mixture import CausalCounterfactualMixtureERACE
 from .global_temporal import GlobalTemporalSteadyERACE
+from .lpr import LPRPlugin
 from .semantic_anchor import GlobalSemanticAnchorERACE
-from .semantic_representative import SemanticRepresentativeERACE, ClassReplayVulnerabilityAuditERACE, SelfReferencedReplayDeteriorationAuditERACE, PersistentSelfReferencedReplayDeteriorationAuditERACE, PersistentSRRDDebtSwapERACE, SelectivePersistentSRRDSwapERACE, ReplayFeatureDualHeadCalibrationERACE, FixedAlphaDualHeadCalibrationERACE, CanonicalOBCDualHeadERACE, RiskBudgetedDualHeadArbitrationERACE, PrequentialRiskBudgetedDualHeadArbitrationERACE, PrequentialCurrentOnlyArbitrationERACE, PrequentialReplayOnlyArbitrationERACE, PrequentialLastAlphaArbitrationERACE, SRRDConsequencePrequentialArbitrationERACE, ParetoGuardedReplayRepairERACE, MemoryCertifiedReplayRepairERACE, PersistentSRRDLossRedistributionERACE, SupportCalibratedPersistentSRRDLossRedistributionERACE, SupportBalancedPersistentSRRDLossRedistributionERACE, TIRPSemanticRepresentativeERACE, FIRPScoreAuditERACE, ClassFIRPERACE, ClassFIRPDebtSwapERACE, ClassFIRPExposureAuditERACE, TIRPSemanticBoundaryERACE, TIRPDecisionConsolidatedERACE, TIRPProxyRelationERACE, TIRPProxyContrastiveERACE, TIRPSemanticRelationERACE, TIRPSemanticRelationGuardERACE, TIRPPrototypeBoundaryRelationERACE, TIRPMaturityNormalizedRelationERACE, TIRPSparseBudgetedRelationERACE
+from .semantic_representative import SemanticRepresentativeERACE, ClassReplayVulnerabilityAuditERACE, SelfReferencedReplayDeteriorationAuditERACE, PersistentSelfReferencedReplayDeteriorationAuditERACE, PersistentSRRDDebtSwapERACE, SelectivePersistentSRRDSwapERACE, ReplayFeatureDualHeadCalibrationERACE, FixedAlphaDualHeadCalibrationERACE, CanonicalOBCDualHeadERACE, RiskBudgetedDualHeadArbitrationERACE, PrequentialRiskBudgetedDualHeadArbitrationERACE, PrequentialCurrentOnlyArbitrationERACE, PrequentialReplayOnlyArbitrationERACE, PrequentialLastAlphaArbitrationERACE, PrequentialRandomArbitrationERACE, SRRDConsequencePrequentialArbitrationERACE, ParetoGuardedReplayRepairERACE, MemoryCertifiedReplayRepairERACE, PersistentSRRDLossRedistributionERACE, SupportCalibratedPersistentSRRDLossRedistributionERACE, SupportBalancedPersistentSRRDLossRedistributionERACE, TIRPSemanticRepresentativeERACE, FIRPScoreAuditERACE, ClassFIRPERACE, ClassFIRPDebtSwapERACE, ClassFIRPExposureAuditERACE, TIRPSemanticBoundaryERACE, TIRPDecisionConsolidatedERACE, TIRPProxyRelationERACE, TIRPProxyContrastiveERACE, TIRPSemanticRelationERACE, TIRPSemanticRelationGuardERACE, TIRPPrototypeBoundaryRelationERACE, TIRPMaturityNormalizedRelationERACE, TIRPSparseBudgetedRelationERACE
 from .memory_audit import ReplayLabelNoisePlugin
 from .retention import ConsequenceAwareExperienceBalancedBuffer
 from .clock_bridge import ClockBridgeReplayPlugin
@@ -202,6 +203,23 @@ def build_strategy(
             ),
             None,
         )
+
+    if key == "lpr":
+        omega_0, every_iter = (0.25, 90) if "tinyimagenet" in benchmark_name.lower() else (4.0, 30)
+        storage_policy = ClassBalancedBuffer(max_size=mem_size, adaptive_size=True)
+        replay_plugin = ReplayPlugin(
+            mem_size=mem_size,
+            batch_size_mem=effective_replay_mb_size,
+            storage_policy=storage_policy,
+        )
+        lpr_plugin = LPRPlugin(
+            storage_policy=storage_policy,
+            omega_0=omega_0,
+            beta=2.0,
+            every_iter=every_iter,
+            batch_size=100,
+        )
+        return Naive(**common, plugins=[replay_plugin, lpr_plugin]), None
 
     if key in {
         "causal_er_ace",
@@ -482,10 +500,10 @@ def build_strategy(
         family = _dataset_family(benchmark_name)
         semantic_capacity, reservoir_capacity = semantic_capacities()
         return (PersistentSRRDDebtSwapERACE(**common, **paired_update_audit_args, mem_size=mem_size, batch_size_mem=min(train_mb_size,mem_size), seed=90_000+mem_size, dataset_family=family, with_reservoir=True, semantic_capacity=semantic_capacity, reservoir_capacity=reservoir_capacity, self_ref_ema_decay=.99, max_swaps_per_batch=4, force_neutral_signal=(key=="persistent_srrd_debt_swap_noop"), memory_trace_signature=(memory_trace_signature or key=="persistent_srrd_debt_swap_noop")), None)
-    if key in {"persistent_srrd_selective_swap_noop", "persistent_srrd_selective_swap_1"}:
+    if key in {"persistent_srrd_selective_swap_noop", "persistent_srrd_selective_swap_1", "persistent_srrd_selective_swap_no_wilson"}:
         family = _dataset_family(benchmark_name)
         semantic_capacity, reservoir_capacity = semantic_capacities()
-        return (SelectivePersistentSRRDSwapERACE(**common, **paired_update_audit_args, mem_size=mem_size, batch_size_mem=effective_replay_mb_size, seed=90_000+mem_size, dataset_family=family, with_reservoir=True, semantic_capacity=semantic_capacity, reservoir_capacity=reservoir_capacity, self_ref_ema_decay=.99, confidence_z=1.96, force_neutral_signal=(key=="persistent_srrd_selective_swap_noop"), memory_trace_signature=(memory_trace_signature or key=="persistent_srrd_selective_swap_noop")), None)
+        return (SelectivePersistentSRRDSwapERACE(**common, **paired_update_audit_args, mem_size=mem_size, batch_size_mem=effective_replay_mb_size, seed=90_000+mem_size, dataset_family=family, with_reservoir=True, semantic_capacity=semantic_capacity, reservoir_capacity=reservoir_capacity, self_ref_ema_decay=.99, confidence_z=1.96, force_neutral_signal=(key=="persistent_srrd_selective_swap_noop"), use_wilson_gate=(key!="persistent_srrd_selective_swap_no_wilson"), memory_trace_signature=(memory_trace_signature or key=="persistent_srrd_selective_swap_noop")), None)
     if key in {"persistent_srrd_dual_head_calibration_noop", "persistent_srrd_dual_head_calibration_1"}:
         family = _dataset_family(benchmark_name)
         semantic_capacity, reservoir_capacity = semantic_capacities()
@@ -503,11 +521,11 @@ def build_strategy(
         family = _dataset_family(benchmark_name)
         semantic_capacity, reservoir_capacity = semantic_capacities()
         return (RiskBudgetedDualHeadArbitrationERACE(**common, **paired_update_audit_args, mem_size=mem_size, batch_size_mem=min(train_mb_size,mem_size), seed=90_000+mem_size, dataset_family=family, with_reservoir=True, semantic_capacity=semantic_capacity, reservoir_capacity=reservoir_capacity, self_ref_ema_decay=.99, confidence_z=1.96, calibration_lr_scale=(0.0 if key=="persistent_srrd_risk_budgeted_arbitration_noop" else 1.0), calibration_label_smoothing=.1, memory_trace_signature=(memory_trace_signature or key=="persistent_srrd_risk_budgeted_arbitration_noop")), None)
-    if key in {"persistent_srrd_prequential_arbitration_noop", "persistent_srrd_prequential_arbitration_1"}:
+    if key in {"persistent_srrd_prequential_arbitration_noop", "persistent_srrd_prequential_arbitration_1", "persistent_srrd_prequential_no_wilson"}:
         family = _dataset_family(benchmark_name)
         semantic_capacity, reservoir_capacity = semantic_capacities()
-        return (PrequentialRiskBudgetedDualHeadArbitrationERACE(**common, **paired_update_audit_args, mem_size=mem_size, batch_size_mem=effective_replay_mb_size, seed=90_000+mem_size, dataset_family=family, with_reservoir=True, semantic_capacity=semantic_capacity, reservoir_capacity=reservoir_capacity, self_ref_ema_decay=.99, confidence_z=1.96, calibration_lr_scale=(0.0 if key=="persistent_srrd_prequential_arbitration_noop" else 1.0), calibration_label_smoothing=.1, calibration_replay_detailed_audit=False, memory_trace_signature=(memory_trace_signature or key=="persistent_srrd_prequential_arbitration_noop")), None)
-    if key in {"persistent_srrd_prequential_current_only", "persistent_srrd_prequential_replay_only", "persistent_srrd_prequential_last_alpha", "persistent_srrd_prequential_no_smoothing"}:
+        return (PrequentialRiskBudgetedDualHeadArbitrationERACE(**common, **paired_update_audit_args, mem_size=mem_size, batch_size_mem=effective_replay_mb_size, seed=90_000+mem_size, dataset_family=family, with_reservoir=True, semantic_capacity=semantic_capacity, reservoir_capacity=reservoir_capacity, self_ref_ema_decay=.99, confidence_z=1.96, calibration_lr_scale=(0.0 if key=="persistent_srrd_prequential_arbitration_noop" else 1.0), calibration_label_smoothing=.1, calibration_replay_detailed_audit=False, use_wilson_gate=(key!="persistent_srrd_prequential_no_wilson"), memory_trace_signature=(memory_trace_signature or key=="persistent_srrd_prequential_arbitration_noop")), None)
+    if key in {"persistent_srrd_prequential_current_only", "persistent_srrd_prequential_replay_only", "persistent_srrd_prequential_last_alpha", "persistent_srrd_prequential_no_smoothing", "persistent_srrd_prequential_random"}:
         family = _dataset_family(benchmark_name)
         semantic_capacity, reservoir_capacity = semantic_capacities()
         strategy_class = {
@@ -515,8 +533,10 @@ def build_strategy(
             "persistent_srrd_prequential_replay_only": PrequentialReplayOnlyArbitrationERACE,
             "persistent_srrd_prequential_last_alpha": PrequentialLastAlphaArbitrationERACE,
             "persistent_srrd_prequential_no_smoothing": PrequentialRiskBudgetedDualHeadArbitrationERACE,
+            "persistent_srrd_prequential_random": PrequentialRandomArbitrationERACE,
         }[key]
-        return (strategy_class(**common, **paired_update_audit_args, mem_size=mem_size, batch_size_mem=min(train_mb_size,mem_size), seed=90_000+mem_size, dataset_family=family, with_reservoir=True, semantic_capacity=semantic_capacity, reservoir_capacity=reservoir_capacity, self_ref_ema_decay=.99, confidence_z=1.96, calibration_lr_scale=1.0, calibration_label_smoothing=(0.0 if key=="persistent_srrd_prequential_no_smoothing" else .1), calibration_replay_detailed_audit=False, memory_trace_signature=memory_trace_signature), None)
+        random_kwargs = {"random_arbitration_seed": 290100} if key == "persistent_srrd_prequential_random" else {}
+        return (strategy_class(**common, **paired_update_audit_args, **random_kwargs, mem_size=mem_size, batch_size_mem=min(train_mb_size,mem_size), seed=90_000+mem_size, dataset_family=family, with_reservoir=True, semantic_capacity=semantic_capacity, reservoir_capacity=reservoir_capacity, self_ref_ema_decay=.99, confidence_z=1.96, calibration_lr_scale=1.0, calibration_label_smoothing=(0.0 if key=="persistent_srrd_prequential_no_smoothing" else .1), calibration_replay_detailed_audit=False, memory_trace_signature=memory_trace_signature), None)
     if key in {"persistent_srrd_consequence_prequential_noop", "persistent_srrd_consequence_prequential_1"}:
         family = _dataset_family(benchmark_name)
         semantic_capacity, reservoir_capacity = semantic_capacities()
@@ -864,8 +884,8 @@ def build_strategy(
         return JointTraining(**common), None
 
     raise ValueError(
-        "Unknown strategy. Supported: naive, replay, derpp, er_ace, causal_er_ace, causal_er_ace_trace_control, causal_er_ace_memory_trace, causal_er_ace_prequential_arbitration_noop, causal_er_ace_prequential_arbitration_1, semantic_proto_hybrid_75_25_trace_control, semantic_proto_hybrid_75_25_memory_trace, scr, causal_er_ace_cb, causal_er_ace_hybrid, causal_counterfactual_mixture, causal_hybrid_accuracy_audit, causal_hybrid_accuracy_correction, causal_hybrid_gain_budget_audit, causal_hybrid_gain_budget_correction, global_temporal_steady, mir, stream_clock, stream_clock_mature, stream_clock_mature_balanced, stream_clock_mature_uncertain, stream_clock_coverage, stream_clock_mature_coverage, stream_clock_mature_soft_coverage, stream_clock_scheduler, deferred_stream_clock, uniform_budget, risk_budget, plasticity_budget, boundary_debt, boundary_repair, boundary_feature_repair, memory_noise, "
-        "global_semantic_anchor, global_semantic_replay_anchor, semantic_anchor_compatibility_audit, persistent_srrd_dual_head_calibration_noop, persistent_srrd_dual_head_calibration_1, persistent_srrd_fixed_alpha_025, persistent_srrd_fixed_alpha_05, persistent_srrd_fixed_alpha_075, persistent_srrd_obc_1, persistent_srrd_risk_budgeted_arbitration_noop, persistent_srrd_risk_budgeted_arbitration_1, persistent_srrd_prequential_arbitration_noop, persistent_srrd_prequential_arbitration_1, persistent_srrd_prequential_current_only, persistent_srrd_prequential_replay_only, persistent_srrd_prequential_last_alpha, persistent_srrd_prequential_no_smoothing, persistent_srrd_consequence_prequential_noop, persistent_srrd_consequence_prequential_1, tirp_semantic_relation_coverage_v2, ewc, si, lwf, joint."
+        "Unknown strategy. Supported: naive, replay, derpp, er_ace, lpr, causal_er_ace, causal_er_ace_trace_control, causal_er_ace_memory_trace, causal_er_ace_prequential_arbitration_noop, causal_er_ace_prequential_arbitration_1, semantic_proto_hybrid_75_25_trace_control, semantic_proto_hybrid_75_25_memory_trace, scr, causal_er_ace_cb, causal_er_ace_hybrid, causal_counterfactual_mixture, causal_hybrid_accuracy_audit, causal_hybrid_accuracy_correction, causal_hybrid_gain_budget_audit, causal_hybrid_gain_budget_correction, global_temporal_steady, mir, stream_clock, stream_clock_mature, stream_clock_mature_balanced, stream_clock_mature_uncertain, stream_clock_coverage, stream_clock_mature_coverage, stream_clock_mature_soft_coverage, stream_clock_scheduler, deferred_stream_clock, uniform_budget, risk_budget, plasticity_budget, boundary_debt, boundary_repair, boundary_feature_repair, memory_noise, "
+        "global_semantic_anchor, global_semantic_replay_anchor, semantic_anchor_compatibility_audit, persistent_srrd_dual_head_calibration_noop, persistent_srrd_dual_head_calibration_1, persistent_srrd_fixed_alpha_025, persistent_srrd_fixed_alpha_05, persistent_srrd_fixed_alpha_075, persistent_srrd_obc_1, persistent_srrd_risk_budgeted_arbitration_noop, persistent_srrd_risk_budgeted_arbitration_1, persistent_srrd_prequential_arbitration_noop, persistent_srrd_prequential_arbitration_1, persistent_srrd_prequential_current_only, persistent_srrd_prequential_replay_only, persistent_srrd_prequential_last_alpha, persistent_srrd_prequential_random, persistent_srrd_prequential_no_smoothing, persistent_srrd_selective_swap_no_wilson, persistent_srrd_prequential_no_wilson, persistent_srrd_consequence_prequential_noop, persistent_srrd_consequence_prequential_1, tirp_semantic_relation_coverage_v2, ewc, si, lwf, joint."
     )
 
 
@@ -991,6 +1011,8 @@ def run_stream(
     for plugin in getattr(strategy, "plugins", []):
         if isinstance(plugin, ReplayLabelNoisePlugin):
             payload["memory_noise_audit"] = plugin.summary()
+        if isinstance(plugin, LPRPlugin):
+            payload["lpr_audit"] = plugin.summary()
     retention_policy = getattr(strategy, "rbcl_retention_policy", None)
     if retention_policy is not None and hasattr(retention_policy, "summary"):
         payload["retention_stats"] = retention_policy.summary()

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the versioned Zenodo record."
+title: "Failure-Localized Replay: Reproducibility Artifact"
+type: software
+version: 1.1.0
+date-released: 2026-09-04
+doi: 10.5281/zenodo.22295917
+repository-code: "https://github.com/xiaoxiao-zhu0/failure-localized-replay"
+license: MIT
+authors:
+  - family-names: Xiao
+    given-names: Jingquan
+    affiliation: "School of Computer Science, University of South China"
+keywords:
+  - online continual learning
+  - experience replay
+  - catastrophic forgetting
+  - prequential evaluation
+  - decision calibration

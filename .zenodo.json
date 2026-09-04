@@ -1,0 +1,30 @@
+{
+  "title": "Failure-Localized Replay: Reproducibility Artifact",
+  "upload_type": "software",
+  "description": "Version 1.1.0 freezes the code, configurations, protocols, analysis outputs, and figures supporting the Pattern Recognition manuscript on failure-localized replay. It adds the corrected D134 Tiny ImageNet study, the D135 CORe50 external-validity study, and D136 design controls. The LPR implementation is included, but production LPR results are not part of this release.",
+  "creators": [
+    {
+      "name": "Xiao, Jingquan",
+      "affiliation": "School of Computer Science, University of South China"
+    }
+  ],
+  "keywords": [
+    "online continual learning",
+    "experience replay",
+    "catastrophic forgetting",
+    "prequential evaluation",
+    "decision calibration",
+    "Pattern Recognition"
+  ],
+  "license": "MIT",
+  "version": "1.1.0",
+  "publication_date": "2026-09-04",
+  "doi": "10.5281/zenodo.22295917",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/xiaoxiao-zhu0/failure-localized-replay",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

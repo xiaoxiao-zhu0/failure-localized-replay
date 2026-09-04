@@ -5,9 +5,13 @@ __pycache__/
 data/
 datasets/
 results/raw_summaries/
+source/tmp/
 logs/
+*.log
+*.pid
 *.pt
 *.pth
 *.ckpt
 *.tar
 *.tar.gz
+*.zip

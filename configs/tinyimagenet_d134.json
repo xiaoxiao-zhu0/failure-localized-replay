@@ -1,0 +1,16 @@
+{
+  "stage": "D134 normalization-corrected Tiny ImageNet",
+  "benchmarks": ["split_tinyimagenet", "equal_exposure_blurry_tinyimagenet"],
+  "n_experiences": 10,
+  "train_epochs": 5,
+  "train_mb_size": 64,
+  "replay_mb_size": 64,
+  "eval_mb_size": 128,
+  "memory_size": 100,
+  "learning_rate": 0.05,
+  "momentum": 0.9,
+  "weight_decay": 0.0,
+  "validation_fraction": 0.0,
+  "seeds": [218, 219, 220, 221, 222],
+  "methods": ["causal_er_ace", "persistent_srrd_selective_swap_1", "persistent_srrd_prequential_arbitration_1", "persistent_srrd_obc_1"]
+}

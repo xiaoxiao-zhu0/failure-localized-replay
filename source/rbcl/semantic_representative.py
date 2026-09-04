@@ -266,10 +266,10 @@ class PersistentSRRDDebtSwapERACE(PersistentSelfReferencedReplayDeteriorationAud
 class SelectivePersistentSRRDSwapERACE(PersistentSRRDDebtSwapERACE):
  """Use one confidence-gated swap from the current lagged SRRD residual."""
 
- def __init__(self,*args,confidence_z:float=1.96,force_neutral_signal:bool=False,**kwargs):
+ def __init__(self,*args,confidence_z:float=1.96,force_neutral_signal:bool=False,use_wilson_gate:bool=True,**kwargs):
   if confidence_z<=0: raise ValueError('confidence_z must be positive')
   super().__init__(*args,max_swaps_per_batch=1,force_neutral_signal=force_neutral_signal,**kwargs)
-  self.confidence_z=float(confidence_z); self._selective_confidence_rejections=0
+  self.confidence_z=float(confidence_z); self.use_wilson_gate=bool(use_wilson_gate); self._selective_confidence_rejections=0
  @staticmethod
  def _wilson_interval(positive_count,total_count,z=1.96):
   if total_count<=0: return 0.0,1.0
@@ -281,18 +281,20 @@ class SelectivePersistentSRRDSwapERACE(PersistentSRRDDebtSwapERACE):
   for target_label in positive:
    target=self._srrd_classes.get(target_label)
    if target is None or target['repeat_event_count']<=0: continue
+   target_rate=float(target['positive_ce_event_count'])/float(target['repeat_event_count'])
    target_low,_=self._wilson_interval(target['positive_ce_event_count'],target['repeat_event_count'],self.confidence_z)
    for source_label in negative:
     source=self._srrd_classes.get(source_label)
     if source is None or source['repeat_event_count']<=0: continue
+    source_rate=float(source['positive_ce_event_count'])/float(source['repeat_event_count'])
     _,source_high=self._wilson_interval(source['positive_ce_event_count'],source['repeat_event_count'],self.confidence_z)
-    gap=target_low-source_high
+    gap=(target_low-source_high) if self.use_wilson_gate else (target_rate-source_rate)
     if gap>0: candidates.append((gap,self._persistent_debt[target_label],-self._persistent_debt[source_label],-target_label,-source_label,target_label,source_label))
   if not candidates:
    self._selective_confidence_rejections+=1; return None
   best=max(candidates); return best[-2],best[-1]
  def rbcl_summary(self):
-  r=super().rbcl_summary(); replay=r['persistent_srrd_replay']; replay.update({'controller_mode':'confidence_gated_instantaneous_residual','debt_carries_across_batches':False,'confidence_interval':'wilson_95_non_overlap','confidence_z':self.confidence_z,'minimum_intervention_units_per_batch':0,'maximum_intervention_units_per_batch':1,'supports_abstention':True,'batches_without_swaps':self._persistent_replay_calls-self._persistent_batches_with_swaps,'confidence_rejected_batches':self._selective_confidence_rejections}); return r
+  r=super().rbcl_summary(); replay=r['persistent_srrd_replay']; replay.update({'controller_mode':'confidence_gated_instantaneous_residual','debt_carries_across_batches':False,'confidence_interval':('wilson_95_non_overlap' if self.use_wilson_gate else 'point_estimate_positive_gap'),'wilson_gate_enabled':self.use_wilson_gate,'confidence_z':self.confidence_z,'minimum_intervention_units_per_batch':0,'maximum_intervention_units_per_batch':1,'supports_abstention':True,'batches_without_swaps':self._persistent_replay_calls-self._persistent_batches_with_swaps,'confidence_rejected_batches':self._selective_confidence_rejections}); return r
 
 
 class ReplayFeatureDualHeadCalibrationERACE(SelectivePersistentSRRDSwapERACE):
@@ -970,16 +972,25 @@ class RiskBudgetedDualHeadArbitrationERACE(
    raise FloatingPointError('nonfinite arbitration derivative')
   return float(alpha.detach().cpu())
 
+ def _batch_arbitration_alpha(
+  self,current_training,current_calibration,current_labels,
+  replay_training,replay_calibration,replay_labels,
+ ):
+  return self._optimal_arbitration_alpha(
+   current_training,current_calibration,current_labels,
+   replay_training,replay_calibration,replay_labels,
+   self.calibration_label_smoothing,
+  )
+
  def _record_arbitration_logits(
   self,current_training,current_calibration,current_labels,
   replay_training,replay_calibration,replay_labels,started,
  ):
   try:
    with torch.no_grad():
-    alpha=self._optimal_arbitration_alpha(
+    alpha=self._batch_arbitration_alpha(
      current_training,current_calibration,current_labels,
      replay_training,replay_calibration,replay_labels,
-     self.calibration_label_smoothing,
     )
     mixed_current=torch.lerp(current_training,current_calibration,alpha)
     mixed_replay=torch.lerp(replay_training,replay_calibration,alpha)
@@ -1249,6 +1260,35 @@ class PrequentialLastAlphaArbitrationERACE(
    'alpha_source':'latest pre-update batchwise convex optimum',
    'aggregation_rule':'last-alpha',
    'cumulative_mean_alpha_for_audit':cumulative_mean,
+  })
+  return r
+
+
+class PrequentialRandomArbitrationERACE(
+ PrequentialRiskBudgetedDualHeadArbitrationERACE
+):
+ """Use an independent random batch coefficient as a negative control."""
+
+ def __init__(self,*args,random_arbitration_seed:int=290100,**kwargs):
+  super().__init__(*args,**kwargs)
+  self._random_arbitration_rng=random.Random(int(random_arbitration_seed))
+
+ def _batch_arbitration_alpha(
+  self,current_training,current_calibration,current_labels,
+  replay_training,replay_calibration,replay_labels,
+ ):
+  del current_training,current_calibration,current_labels
+  del replay_training,replay_calibration,replay_labels
+  return self._random_arbitration_rng.random()
+
+ def rbcl_summary(self):
+  r=super().rbcl_summary()
+  r['risk_budgeted_head_arbitration'].update({
+   'alpha_source':'independent fixed-seed uniform random batch coefficient',
+   'aggregation_rule':'online cumulative mean of random coefficients',
+   'fixed_or_tuned_alpha':False,
+   'random_arbitration_seed_is_independent_of_main_sampler':True,
+   'random_arbitration_distribution':'Uniform(0, 1)',
   })
   return r
 

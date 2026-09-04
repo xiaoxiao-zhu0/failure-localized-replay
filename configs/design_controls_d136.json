@@ -1,0 +1,16 @@
+{
+  "stage": "D136 design-choice controls",
+  "benchmarks": ["split_cifar100", "equal_exposure_blurry_cifar100"],
+  "n_experiences": 10,
+  "train_epochs": 5,
+  "train_mb_size": 64,
+  "replay_mb_size": 64,
+  "eval_mb_size": 128,
+  "memory_size": 100,
+  "learning_rate": 0.05,
+  "momentum": 0.9,
+  "weight_decay": 0.0,
+  "validation_fraction": 0.0,
+  "seeds": [252, 253, 254],
+  "methods": ["persistent_srrd_prequential_random", "persistent_srrd_selective_swap_no_wilson", "persistent_srrd_prequential_no_wilson"]
+}

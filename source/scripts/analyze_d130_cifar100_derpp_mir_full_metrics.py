@@ -114,7 +114,7 @@ def main() -> None:
         "methods": methods,
         "full_metrics_gate_passes": all(all_checks),
         "execution_boundary": {
-            "server": "teacher-server2",
+            "server": "experiment-server",
             "physical_gpu": 1,
             "workers": 2,
             "runtime_authoritative": False,

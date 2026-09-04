@@ -1,55 +1,86 @@
 # Failure-Localized Replay: Reproducibility Artifact
 
-
-This artifact accompanies the Pattern Recognition manuscript
+This repository accompanies the Pattern Recognition manuscript
 "Failure-Localized Replay: Preservation, Exposure, and Prequential Decision
 Arbitration for Online Continual Learning."
 
+Version 1.1.0 freezes the code, configurations, analyzer outputs, and figures
+used by the current manuscript draft. Public benchmark data are not included.
 
-The artifact contains the source code for the replay components, the frozen
-analysis outputs used in the manuscript, experiment protocols, configuration
-values, and publication figures. Public datasets are not redistributed. The
-experiments use CIFAR-100 and Tiny ImageNet obtained from their official or
-standard public sources.
+## Repository and archived version
 
+- GitHub: https://github.com/xiaoxiao-zhu0/failure-localized-replay
+- Zenodo v1.1.0: https://doi.org/10.5281/zenodo.22295917
+- Zenodo concept DOI: https://doi.org/10.5281/zenodo.21892632
 
-## Repository and DOI
+The version DOI identifies this exact release. The concept DOI resolves to the
+latest published version of the artifact.
 
+## Evidence included
 
-The public repository and its versioned Zenodo archive are:
+- Split CIFAR-100: primary parent-path, interaction, memory-budget, runtime,
+  closest-method, and design-control analyses.
+- Tiny ImageNet: the completed D134 normalization-corrected five-seed hard and
+  equal-exposure blurry study.
+- CORe50: the completed D135 three-seed matched hard/blurry external-validity
+  study, including the OBC comparison.
+- D136: three-seed random-arbitration and Wilson-gate controls.
+- LPR: implementation and matched runner only. Production LPR results are still
+  running and are not included or claimed as completed evidence.
 
+The compact JSON files in `results/analysis/` retain the per-seed values,
+aggregates, comparisons, and protocol or parent-path audit outcomes used in the
+manuscript. They are the frozen evidence layer for the reported tables.
 
-- GitHub: `https://github.com/xiaoxiao-zhu0/failure-localized-replay`
-- Zenodo v1.0.0: `https://doi.org/10.5281/zenodo.21892633`
-
-
-The DOI resolves to the exact v1.0.0 artifact associated with the manuscript.
-
-
-## Contents
-
+## Repository layout
 
 - `source/avalanche/`: Avalanche source snapshot used by the experiments.
-- `source/rbcl/`: replay, memory, arbitration, audit, and evaluation code.
+- `source/rbcl/`: replay, memory, arbitration, audit, evaluation, and LPR code.
 - `source/examples/rbcl_run_experiment.py`: experiment entry point.
-- `source/scripts/`: frozen analyzers and validation scripts for the reported studies.
-- `configs/`: exact main settings and seed assignments.
-- `protocols/`: dataset, stream, metric, audit, and resource protocols.
-- `results/analysis/`: compact frozen analyzer outputs cited by the paper.
-- `results/raw_summaries/`: optional per-run summaries for Zenodo; these are not
-  intended to be committed to the GitHub source repository.
-- `figures/`: figures used in the manuscript.
-- `environment/`: Python dependency specification.
+- `source/scripts/`: analyzers, validation scripts, and matched runners.
+- `configs/`: frozen protocol configurations.
+- `protocols/`: stream, metric, audit, and resource definitions.
+- `results/analysis/`: machine-readable frozen analyzer outputs.
+- `figures/`: publication figures used by the current manuscript.
+- `environment/`: Python dependency specification and environment boundary.
 
+## Running from the source snapshot
 
-## Main experimental settings
+Create an environment from `environment/requirements.txt`, obtain the public
+datasets separately, and run commands from the `source/` directory so that the
+bundled Avalanche snapshot and `rbcl` package are on `PYTHONPATH`.
 
+Example:
 
-- Dataset protocols: ten-experience online class-incremental Split CIFAR-100,
-  hard and equal-exposure blurry streams; Tiny ImageNet boundary study.
-- Optimizer: SGD, learning rate 0.05, momentum 0.9, no weight decay.
-- Training: five epochs per experience, current minibatch 64, replay minibatch 64.
-- Memory: 100 for the main study; 50 and 200 for memory sensitivity.
-- Hybrid memory: 75% semantic coverage and 25% reservoir sampling.
-- Layer 2: EMA decay 0.99, Wilson z=1.96, residual threshold 0.5, at most one swap.
-- Main factorial seeds: 260, 261, 262, 263, 264.
+```bash
+cd source
+export PYTHONPATH="$PWD${PYTHONPATH:+:$PYTHONPATH}"
+python examples/rbcl_run_experiment.py --help
+```
+
+The shell runners accept `PYTHON`, `DATASET_ROOT`, `GPU` or `GPUS`, and output
+root overrides. Hardware-specific paths are not embedded in the artifact.
+
+## Main protocol boundary
+
+The main CIFAR-100 protocol uses ten experiences, five epochs per experience,
+current and replay minibatches of 64, memory 100, SGD with learning rate 0.05
+and momentum 0.9, and paired hard/equal-exposure blurry streams. D134 uses the
+same optimization interface on Tiny ImageNet. D135 uses nine CORe50 experiences
+and a dataset-adapted learning rate of 0.01. D136 uses seeds 252-254 and the
+registered CIFAR-100 resource interface.
+
+The artifact supports the bounded claims in the manuscript. It does not claim
+universal dominance, formal retention guarantees, or completed LPR results.
+
+## Integrity
+
+`SHA256SUMS.txt` lists every release file except the checksum file itself. The
+GitHub release archive and the Zenodo upload are generated from the same frozen
+directory.
+
+## License and citation
+
+Code is distributed under the MIT License. Cite the versioned Zenodo record for
+the artifact used in an analysis. Citation metadata are provided in
+`CITATION.cff` and `.zenodo.json`.
