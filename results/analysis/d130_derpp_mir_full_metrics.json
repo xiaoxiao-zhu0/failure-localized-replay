@@ -530,7 +530,7 @@
   },
   "full_metrics_gate_passes": true,
   "execution_boundary": {
-    "server": "teacher-server2",
+    "server": "experiment-server",
     "physical_gpu": 1,
     "workers": 2,
     "runtime_authoritative": false
