@@ -267,7 +267,7 @@ def parse_args():
         choices=["event_validation", "test_stream"],
         help=(
             "Reference stream for reported historical accuracy/forgetting. "
-            "Use test_stream only for a preregistered screening run that must "
+            "Use test_stream only for a pre-specified internal screening run that must "
             "compare different training-clock granularities."
         ),
     )

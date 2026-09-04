@@ -676,7 +676,7 @@ class ReplayFeatureDualHeadCalibrationERACE(SelectivePersistentSRRDSwapERACE):
 class FixedAlphaDualHeadCalibrationERACE(
  ReplayFeatureDualHeadCalibrationERACE
 ):
- """Use the replay-trained calibration head with a preregistered fixed blend."""
+ """Use the replay-trained calibration head with a pre-specified fixed blend."""
 
  def __init__(self,*args,deployment_alpha:float=0.5,**kwargs):
   if not 0.0<=deployment_alpha<=1.0:
@@ -703,7 +703,7 @@ class FixedAlphaDualHeadCalibrationERACE(
    'enabled':calibration['enabled'],
    'deployment_rule':'z_train + alpha * (z_calibration - z_train)',
    'deployment_alpha':self.deployment_alpha,
-   'alpha_source':'preregistered constant, not selected from results',
+   'alpha_source':'pre-specified constant, not selected from results',
    'fixed_or_tuned_alpha':True,
    'uses_validation_pss_future_data_or_task_boundary':False,
    'additional_replay_draws':0,

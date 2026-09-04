@@ -269,7 +269,7 @@ def markdown(report: dict) -> str:
         [
             "",
             "All values are mean +/- sample SD over seeds 252--254 after "
-            "combining the paired hard and blurry streams by the registered "
+            "combining the paired hard and blurry streams by the frozen "
             "metric definitions.",
             "",
             "## Audit",

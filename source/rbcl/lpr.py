@@ -1,8 +1,4 @@
-"""Layerwise Proximal Replay plugin adapted from the public LPR implementation.
-
-Upstream: https://github.com/plai-group/LPR (MIT License).
-See THIRD_PARTY_NOTICES.md at the artifact root.
-"""
+"""Layerwise Proximal Replay plugin from the public LPR implementation."""
 
 from __future__ import annotations
 

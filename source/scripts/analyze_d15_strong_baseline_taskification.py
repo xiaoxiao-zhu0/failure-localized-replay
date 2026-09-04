@@ -126,7 +126,7 @@ def main() -> None:
             "Analyze the residual of the best robust strong baseline before "
             "claiming a new mechanism."
             if robust
-            else "Proceed to the preregistered non-invasive target-repair audit."
+            else "Proceed to the pre-specified non-invasive target-repair audit."
         ),
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)

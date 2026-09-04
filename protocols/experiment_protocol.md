@@ -11,7 +11,7 @@ boundary study, and CORe50 is descriptive external-validity evidence.
 
 Each minibatch is evaluated before it is used for training. The learner does
 not receive task identifiers. The hard stream has separated class experiences;
-the equal-exposure blurry stream uses the registered mixing policy. Metrics are
+the equal-exposure blurry stream uses the frozen mixing policy. Metrics are
 computed from the same prequential and historical-reference interfaces across
 paired methods.
 
@@ -22,7 +22,11 @@ paired methods.
 - Layer 2: lagged same-item deterioration-guided replay correction.
 - PRBA: pre-update current/replay risk-budgeted deployment arbitration attached
   to the Layer-2 parent.
-- OBC: retention-oriented comparator.
+- OBC: output-layer bias-correction comparator using the same Layer-2 parent,
+  memory, minibatch size, and optimizer schedule; it makes an independent
+  uniform replay draw and one additional frozen-backbone forward.
+- LPR: layerwise proximal replay comparator adapted from the public reference
+  implementation.
 
 ## Dataset protocols
 
@@ -41,7 +45,7 @@ weight decay, and no validation split unless explicitly stated otherwise.
 
 ## Controls and audits
 
-The registered audits check model, memory, and replay-index hashes where
+The frozen audits check model, memory, and replay-index hashes where
 applicable; prequential order; no future, task, validation, or test leakage; no
 extra replay draw; no extra backbone forward for PRBA; and no non-finite skip.
 These are implementation checks, not formal causal guarantees.
@@ -49,16 +53,18 @@ These are implementation checks, not formal causal guarantees.
 ## Statistical reporting
 
 The primary paired study uses five seeds. D134 also uses five paired seeds.
-D135 and D136 use three paired seeds and are reported descriptively. The
+D135 and D136 use three paired seeds and are reported descriptively. LPR uses
+five paired seeds, but its concurrent elapsed time is descriptive. The
 artifact preserves per-seed effects, interval estimates where computed, exact
 sign-flip results where applicable, direction counts, and the stated
 small-sample limitations.
 
 ## LPR status
 
-The release includes an LPR implementation and matched CIFAR-100 runner for
-reproducibility of the ongoing comparison. Production LPR results are not
-included in version 1.1.0 and must not be interpreted as completed evidence.
+Version 1.2.0 includes all 10 completed LPR runs for seeds 218-222 on hard and
+equal-exposure blurry Split CIFAR-100 streams. All protocol and LPR activity
+checks pass. The exact run summaries, logs, CSV outputs, execution manifest,
+analysis, configuration, and source hashes are frozen in the release.
 
 ## Dataset policy
 

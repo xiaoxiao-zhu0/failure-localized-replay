@@ -1,11 +1,14 @@
-# Environment Boundary
+# Recovered Training Environment
 
-The training runs were executed on Linux with a Miniconda Python 3.10
-environment and CUDA-capable GPUs. `requirements.txt` records the required
-Python package families, but it is not presented as an exact historical
-`pip freeze`: the original server-level PyTorch, torchvision, CUDA, cuDNN, and
-driver versions have not been recovered reliably.
+The exact server-level software and hardware record is frozen in
+`training_environment.txt`; the complete package listing is in
+`pip-freeze-training-server.txt`. `requirements.txt` remains a portable package
+family specification rather than an exact lockfile.
 
-This limitation is explicit so that the artifact does not claim byte-identical
-environment reconstruction. The frozen analyzer outputs and checksums support
-verification of the reported statistics without rerunning every training job.
+The experiment server directory did not contain `.git`, so the historical
+training commit is unavailable. This release does not invent one. Instead,
+`source_hashes.sha256` records the server-matched LPR implementation, trainer,
+runner, and analyzer hashes, while the release-wide `SHA256SUMS.txt` covers
+every distributed file. The local repository HEAD used during release
+assembly is recorded separately and must not be interpreted as the historical
+training commit.

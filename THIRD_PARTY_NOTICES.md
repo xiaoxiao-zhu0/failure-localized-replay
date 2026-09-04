@@ -20,8 +20,8 @@ experiments. Its original copyright and MIT terms are retained in `LICENSE`.
 - Copyright: Copyright (c) 2023 Albin Soutif
 
 `source/rbcl/lpr.py` adapts the public LPR implementation to the artifact's
-Avalanche training interface. The implementation is included for the ongoing
-matched comparison; production LPR results are not included in version 1.1.0.
+Avalanche training interface. Version 1.2.0 includes the completed matched
+comparison and its full run outputs.
 
 The upstream MIT permission notice and disclaimer apply to the corresponding
 adapted portions.

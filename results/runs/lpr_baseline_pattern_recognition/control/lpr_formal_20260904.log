@@ -1,0 +1,21 @@
+[LPR] start seed=218 benchmark=split_cifar100 gpu=0
+[LPR] start seed=218 benchmark=equal_exposure_blurry_cifar100 gpu=1
+[LPR] done seed=218 benchmark=split_cifar100 seconds=832
+[LPR] start seed=219 benchmark=split_cifar100 gpu=0
+[LPR] done seed=218 benchmark=equal_exposure_blurry_cifar100 seconds=841
+[LPR] start seed=219 benchmark=equal_exposure_blurry_cifar100 gpu=1
+[LPR] done seed=219 benchmark=split_cifar100 seconds=831
+[LPR] start seed=220 benchmark=split_cifar100 gpu=0
+[LPR] done seed=219 benchmark=equal_exposure_blurry_cifar100 seconds=847
+[LPR] start seed=220 benchmark=equal_exposure_blurry_cifar100 gpu=1
+[LPR] done seed=220 benchmark=split_cifar100 seconds=659
+[LPR] start seed=221 benchmark=split_cifar100 gpu=0
+[LPR] done seed=220 benchmark=equal_exposure_blurry_cifar100 seconds=841
+[LPR] start seed=221 benchmark=equal_exposure_blurry_cifar100 gpu=1
+[LPR] done seed=221 benchmark=split_cifar100 seconds=663
+[LPR] start seed=222 benchmark=split_cifar100 gpu=0
+[LPR] done seed=221 benchmark=equal_exposure_blurry_cifar100 seconds=673
+[LPR] start seed=222 benchmark=equal_exposure_blurry_cifar100 gpu=1
+[LPR] done seed=222 benchmark=split_cifar100 seconds=617
+[LPR] done seed=222 benchmark=equal_exposure_blurry_cifar100 seconds=749
+[LPR] complete: /home/xiao20244352113/avalanche-master/results/rbcl/lpr_baseline_pattern_recognition

@@ -4,17 +4,18 @@ This repository accompanies the Pattern Recognition manuscript
 "Failure-Localized Replay: Preservation, Exposure, and Prequential Decision
 Arbitration for Online Continual Learning."
 
-Version 1.1.0 freezes the code, configurations, analyzer outputs, and figures
-used by the current manuscript draft. Public benchmark data are not included.
+Version 1.2.0 freezes the code, configurations, analyzer outputs, figures,
+complete LPR runs, exact training-environment record, and integrity hashes used
+by the current manuscript draft. Public benchmark data are not included.
 
 ## Repository and archived version
 
 - GitHub: https://github.com/xiaoxiao-zhu0/failure-localized-replay
-- Zenodo v1.1.0: https://doi.org/10.5281/zenodo.22295917
+- Zenodo v1.2.0 DOI: https://doi.org/10.5281/zenodo.22306368
 - Zenodo concept DOI: https://doi.org/10.5281/zenodo.21892632
 
-The version DOI identifies this exact release. The concept DOI resolves to the
-latest published version of the artifact.
+The version DOI identifies the immutable v1.2.0 artifact. The concept DOI
+resolves to the latest published version of the artifact.
 
 ## Evidence included
 
@@ -25,8 +26,8 @@ latest published version of the artifact.
 - CORe50: the completed D135 three-seed matched hard/blurry external-validity
   study, including the OBC comparison.
 - D136: three-seed random-arbitration and Wilson-gate controls.
-- LPR: implementation and matched runner only. Production LPR results are still
-  running and are not included or claimed as completed evidence.
+- LPR: complete five-seed hard/blurry comparison with all 10 run directories,
+  logs, CSV outputs, execution manifest, audit fields, and frozen analysis.
 
 The compact JSON files in `results/analysis/` retain the per-seed values,
 aggregates, comparisons, and protocol or parent-path audit outcomes used in the
@@ -41,8 +42,10 @@ manuscript. They are the frozen evidence layer for the reported tables.
 - `configs/`: frozen protocol configurations.
 - `protocols/`: stream, metric, audit, and resource definitions.
 - `results/analysis/`: machine-readable frozen analyzer outputs.
+- `results/runs/lpr_baseline_pattern_recognition/`: complete LPR runs and logs.
 - `figures/`: publication figures used by the current manuscript.
-- `environment/`: Python dependency specification and environment boundary.
+- `environment/`: exact recovered training environment, full `pip freeze`,
+  portable dependency specification, and source hashes.
 
 ## Running from the source snapshot
 
@@ -68,10 +71,11 @@ current and replay minibatches of 64, memory 100, SGD with learning rate 0.05
 and momentum 0.9, and paired hard/equal-exposure blurry streams. D134 uses the
 same optimization interface on Tiny ImageNet. D135 uses nine CORe50 experiences
 and a dataset-adapted learning rate of 0.01. D136 uses seeds 252-254 and the
-registered CIFAR-100 resource interface.
+frozen CIFAR-100 resource interface. LPR uses seeds 218-222 on both paired
+streams with the same main optimization protocol.
 
 The artifact supports the bounded claims in the manuscript. It does not claim
-universal dominance, formal retention guarantees, or completed LPR results.
+universal dominance or formal retention guarantees.
 
 ## Integrity
 

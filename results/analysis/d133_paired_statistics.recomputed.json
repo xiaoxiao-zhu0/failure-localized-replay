@@ -1,7 +1,7 @@
 {
   "stage": "D133 exact paired statistics",
   "source": "output\\pattern_recognition_github_repo_20260812\\results\\analysis\\d133_layer2_prba_interaction.json",
-  "small_sample_warning": "With five pairs, the minimum attainable two-sided exact sign-flip p-value for a fully consistent nonzero direction is 0.0625. Directional p-values are reported only for preregistered signs.",
+  "small_sample_warning": "With five pairs, the minimum attainable two-sided exact sign-flip p-value for a fully consistent nonzero direction is 0.0625. Directional p-values are reported only for pre-specified internal signs.",
   "cell_statistics": {
     "base": {
       "accuracy": {

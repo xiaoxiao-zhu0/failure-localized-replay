@@ -914,6 +914,6 @@
       "at_least_half_layer3_retention_gain_preserved": true
     },
     "passes": false,
-    "interpretation": "the full model remains empirical, but the preregistered interaction claim is incomplete"
+    "interpretation": "the full model remains empirical, but the pre-specified internal interaction gate is incomplete"
   }
 }

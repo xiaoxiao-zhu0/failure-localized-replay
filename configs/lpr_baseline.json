@@ -1,0 +1,38 @@
+{
+  "stage": "LPR Pattern Recognition CIFAR-100 baseline",
+  "status": "completed_protocol_checked",
+  "benchmarks": [
+    "split_cifar100",
+    "equal_exposure_blurry_cifar100"
+  ],
+  "seeds": [218, 219, 220, 221, 222],
+  "strategy": "lpr",
+  "model": "slim_resnet18",
+  "n_experiences": 10,
+  "train_epochs": 5,
+  "train_mb_size": 64,
+  "replay_mb_size": 64,
+  "eval_mb_size": 128,
+  "mem_size": 100,
+  "optimizer": {
+    "name": "SGD",
+    "lr": 0.05,
+    "momentum": 0.9,
+    "weight_decay": 0.0
+  },
+  "validation_fraction": 0.0,
+  "historical_reference": "test_stream",
+  "deterministic": true,
+  "full_metrics": true,
+  "lpr": {
+    "omega_0": 4.0,
+    "beta": 2.0,
+    "every_iter": 30,
+    "batch_size": 100
+  },
+  "execution": {
+    "physical_gpus": [0, 1],
+    "workers": 2,
+    "runtime_authoritative": false
+  }
+}

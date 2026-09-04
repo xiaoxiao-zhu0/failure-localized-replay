@@ -1,0 +1,11 @@
+seed	benchmark	method	gpu	start_iso	end_iso	seconds	status
+218	split_cifar100	lpr	0	2026-09-04T18:32:25+0800	2026-09-04T18:46:17+0800	832	completed
+218	equal_exposure_blurry_cifar100	lpr	1	2026-09-04T18:32:25+0800	2026-09-04T18:46:26+0800	841	completed
+219	split_cifar100	lpr	0	2026-09-04T18:46:17+0800	2026-09-04T19:00:08+0800	831	completed
+219	equal_exposure_blurry_cifar100	lpr	1	2026-09-04T18:46:26+0800	2026-09-04T19:00:33+0800	847	completed
+220	split_cifar100	lpr	0	2026-09-04T19:00:08+0800	2026-09-04T19:11:07+0800	659	completed
+220	equal_exposure_blurry_cifar100	lpr	1	2026-09-04T19:00:33+0800	2026-09-04T19:14:34+0800	841	completed
+221	split_cifar100	lpr	0	2026-09-04T19:11:07+0800	2026-09-04T19:22:10+0800	663	completed
+221	equal_exposure_blurry_cifar100	lpr	1	2026-09-04T19:14:34+0800	2026-09-04T19:25:47+0800	673	completed
+222	split_cifar100	lpr	0	2026-09-04T19:22:10+0800	2026-09-04T19:32:27+0800	617	completed
+222	equal_exposure_blurry_cifar100	lpr	1	2026-09-04T19:25:47+0800	2026-09-04T19:38:16+0800	749	completed

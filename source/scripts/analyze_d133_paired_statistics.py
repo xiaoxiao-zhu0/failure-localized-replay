@@ -315,7 +315,7 @@ def main() -> None:
         "small_sample_warning": (
             "With five pairs, the minimum attainable two-sided exact sign-flip "
             "p-value for a fully consistent nonzero direction is 0.0625. "
-            "Directional p-values are reported only for preregistered signs."
+            "Directional p-values are reported only for pre-specified internal signs."
         ),
         "cell_statistics": cell_statistics,
         "paired_effects": paired_effects,

@@ -287,7 +287,7 @@ def main() -> None:
             "interpretation": (
                 "Layer 2 and PRBA form a validated balanced interaction"
                 if all(checks.values())
-                else "the full model remains empirical, but the preregistered interaction claim is incomplete"
+                else "the full model remains empirical, but the pre-specified internal interaction gate is incomplete"
             ),
         },
     }
